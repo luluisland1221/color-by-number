@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Detail - ColorByNumbers.fun</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafafa;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .nav-brand h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: #2563eb;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 2rem 0;
+        }
+
+        .pdf-detail {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .pdf-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .pdf-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .pdf-category {
+            opacity: 0.9;
+            font-size: 1.125rem;
+        }
+
+        .pdf-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .pdf-preview {
+            background: #f8f9fa;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .pdf-emoji {
+            font-size: 8rem;
+            margin-bottom: 1rem;
+        }
+
+        .pdf-placeholder-text {
+            font-size: 1.5rem;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        .pdf-info {
+            padding: 1rem 0;
+        }
+
+        .pdf-description {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: #374151;
+            margin-bottom: 2rem;
+        }
+
+        .pdf-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-value {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2563eb;
+        }
+
+        .download-section {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .download-btn {
+            background: #2563eb;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Related PDFs */
+        .related-section {
+            margin-top: 3rem;
+        }
+
+        .related-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .related-card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .related-preview {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 0.75rem 0.75rem 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .related-info {
+            padding: 1rem;
+        }
+
+        .related-name {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .related-category {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pdf-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .pdf-emoji {
+                font-size: 5rem;
+            }
+            
+            .related-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+
+        .breadcrumb {
+            margin-bottom: 1rem;
+            color: #6b7280;
+        }
+
+        .breadcrumb a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1>🎨 ColorByNumbers.fun</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#categories">Categories</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a> > 
+                <a href="#" id="breadcrumb-category">Category</a> > 
+                <span id="breadcrumb-pdf">PDF Name</span>
+            </nav>
+
+            <div class="pdf-detail">
+                <div class="pdf-header">
+                    <h1 class="pdf-title" id="pdf-title">Loading...</h1>
+                    <div class="pdf-category" id="pdf-category">Category</div>
+                </div>
+
+                <div class="pdf-content">
+                    <div class="pdf-preview">
+                        <div class="pdf-emoji" id="pdf-emoji">🎨</div>
+                        <div class="pdf-placeholder-text">PDF Preview</div>
+                        <div class="download-section">
+                            <a href="#" id="download-link" class="download-btn" download>
+                                📥 Download PDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="pdf-info">
+                        <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #1f2937;">About This Coloring Page</h2>
+                        <div class="pdf-description" id="pdf-description">
+                            Loading detailed description...
+                        </div>
+
+                        <div class="pdf-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Category</div>
+                                <div class="stat-value" id="stat-category">Animals</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">File Type</div>
+                                <div class="stat-value">PDF</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Quality</div>
+                                <div class="stat-value">High-Res</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Price</div>
+                                <div class="stat-value">Free</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="related-section">
+                <h2 class="related-title">Related Coloring Pages</h2>
+                <div class="related-grid" id="related-grid">
+                    <!-- Related PDFs will be populated here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Sample PDF data structure - full dataset with 100-word descriptions
+        const pdfData = {
+            animals: [
+                { id: 1, name: 'Lion', emoji: '🦁', file: 'lion.pdf', description: 'This majestic lion coloring page features a detailed portrait of the king of the jungle, captured in stunning detail that brings the African savanna to life. Perfect for young wildlife enthusiasts aged 6-12, this educational resource includes clear number guides and bold outlines that make coloring accessible for beginners while still engaging for advanced colorers. The intricate mane details provide excellent practice for fine motor skills development, while teaching children about wildlife anatomy, African safari animals, and the importance of conservation. The realistic proportions help kids understand animal structure and create a museum-quality piece they\'ll be proud to display.' },
+                { id: 2, name: 'Elephant', emoji: '🐘', file: 'elephant.pdf', description: 'A gentle giant elephant coloring page designed to teach children about these magnificent, intelligent creatures that symbolize wisdom and strength. This educational resource features a detailed African elephant with realistic proportions, showcasing distinctive features like its versatile trunk, curved tusks, and large expressive ears that help regulate body temperature. The number-based coloring system helps kids learn color recognition and number sequencing while creating a beautiful piece of art that celebrates wildlife diversity. Perfect for classroom activities, homeschooling lessons, or rainy day creativity, this page combines artistic expression with biological education about endangered species and ecosystem importance.' },
+                { id: 3, name: 'Penguin', emoji: '🐧', file: 'penguin.pdf', description: 'Adorable penguin coloring page perfect for winter activities and learning about Antarctic wildlife conservation. This charming Emperor penguin design features the distinctive black and white coloring that provides natural camouflage in ocean waters, with clear number indicators that guide young artists through the coloring process. The simple yet detailed illustration makes it ideal for ages 4-8, teaching children about polar habitats, climate change impact, and the fascinating life cycle of penguins. Creates opportunities for discussions about adaptation, survival in extreme environments, and the importance of protecting our planet\'s precious polar ecosystems through engaging artistic expression.' },
+                { id: 4, name: 'Dolphin', emoji: '🐬', file: 'dolphin.pdf', description: 'Playful dolphin swimming in crystal-clear ocean waters captures the joyful spirit of these intelligent marine mammals. Great for marine life lessons and summer-themed activities, this aquatic coloring page teaches children about dolphin behavior, echolocation abilities, and ocean conservation while providing an engaging artistic experience. The dynamic swimming pose and underwater setting make it perfect for discussions about marine ecosystems, pod behavior, and the critical importance of ocean conservation. Features realistic proportions and distinctive dolphin characteristics that help children understand marine biology while developing artistic skills and environmental awareness through creative expression.' },
+                { id: 5, name: 'Rabbit', emoji: '🐰', file: 'rabbit.pdf', description: 'Cute bunny coloring page ideal for Easter celebrations, spring activities, or pet education lessons. This adorable Holland Lop rabbit design features fluffy fur texture, long expressive ears, and a friendly expression that children absolutely love. The number-guided coloring system helps develop essential color recognition, number sequencing, and fine motor skills while creating a delightful spring-themed artwork perfect for seasonal displays. Educational opportunities include discussions about rabbit care, different breeds, herbivore diets, and the important role rabbits play in ecosystems as prey animals. Perfect for ages 5-10, combining artistic development with life science education.' },
+                { id: 6, name: 'Butterfly', emoji: '🦋', file: 'butterfly.pdf', description: 'Beautiful butterfly with intricate wing patterns designed for advanced colorers who enjoy detailed, meditative work. This Monarch butterfly coloring page showcases the delicate beauty of lepidopterans while teaching about symmetry, geometric patterns, and insect anatomy through artistic exploration. The complex wing designs provide hours of creative engagement and artistic expression, featuring realistic vein patterns and scale textures that mirror actual butterfly wing structures. Educational benefits include understanding metamorphosis, pollination importance, migration patterns, and biodiversity conservation. Perfect for ages 8-14, combining advanced coloring skills with entomology education and mindfulness practice through detailed artistic creation.' }
+            ],
+            holidays: [
+                { id: 201, name: 'Christmas Tree', emoji: '🎄', file: 'Christmas tree（Christmas）.pdf', description: 'Festive Christmas tree coloring page featuring beautifully decorated evergreen with twinkling ornaments, glowing lights, and a shining star topper that captures the magic of holiday traditions. Perfect for Christmas celebrations and winter art projects, this detailed illustration includes traditional decorations like candy canes, glass balls, and tinsel that teach children about cultural symbols and seasonal celebrations. The intricate ornament details provide excellent practice for fine motor skills while creating a treasured keepsake for family holiday displays. Educational opportunities include discussions about Christmas traditions, evergreen symbolism, and the history of decorated trees across different cultures and celebrations worldwide.' },
+                { id: 202, name: 'Santa Claus', emoji: '🎅', file: 'Santa Claus.pdf', description: 'Jolly Santa Claus delivering gifts captures the beloved spirit of Christmas generosity and childhood wonder. Perfect for Christmas morning activities and holiday craft projects, this detailed illustration features the iconic red suit, white beard, and gift-filled sack that represent centuries of Christmas tradition and folklore. The cheerful expression and traditional details provide opportunities to discuss cultural celebrations, gift-giving traditions, and the historical evolution of Santa Claus legends across different countries. Creates magical memories while teaching children about generosity, kindness, and the joy of giving through artistic expression and holiday-themed creative activities.' },
+                { id: 203, name: 'Halloween Pumpkin', emoji: '🎃', file: 'jack-o\'-lantern（Halloween）.pdf', description: 'Spooky jack-o-lantern coloring page perfect for Halloween fun and teaching children about autumn traditions and harvest celebrations. This classic Halloween symbol features a carved pumpkin with glowing face that represents the intersection of Celtic traditions and American folk customs. The detailed carving patterns provide excellent practice for fine motor skills while creating festive decorations for Halloween parties and classroom displays. Educational opportunities include discussions about pumpkin biology, harvest seasons, cultural traditions, and the fascinating history of jack-o-lanterns from Celtic folklore to modern celebrations, making it perfect for October learning activities and creative seasonal projects.' }
+            ],
+            vehicles: [
+                { id: 301, name: 'Race Car', emoji: '🏎️', file: 'race-car.pdf', description: 'Fast and furious race car coloring page designed for speed enthusiasts and young racing fans who dream of high-octane adventures. This dynamic sports car illustration features aerodynamic styling, racing stripes, and performance details that capture the excitement of motorsports and automotive engineering. Perfect for teaching children about different types of vehicles while encouraging creativity and attention to mechanical details. The realistic proportions and racing elements provide opportunities to discuss speed, aerodynamics, and automotive technology while developing artistic skills through detailed coloring that celebrates the thrill of racing and transportation innovation.' },
+                { id: 302, name: 'Airplane', emoji: '✈️', file: 'airplane.pdf', description: 'High-flying airplane perfect for aviation lovers and travel-themed activities that spark dreams of adventure and exploration. This detailed commercial aircraft coloring page includes realistic proportions, wing structures, and aviation elements that teach children about flight principles and transportation technology. The clear number guides make it accessible for all skill levels while creating an impressive aviation-themed artwork perfect for bedroom decorations or travel journals. Educational benefits include understanding aerodynamics, different types of aircraft, and the importance of aviation in connecting people and cultures across vast distances through creative, engaging artistic activities.' },
+                { id: 303, name: 'Train', emoji: '🚂', file: 'train.pdf', description: 'Classic steam train with detailed carriages to color - perfect for transportation enthusiasts and history lessons about industrial revolution marvels. This nostalgic locomotive design features authentic details like smokestacks, driving wheels, and passenger cars that teach children about historical transportation evolution and engineering achievements. The intricate mechanical details provide excellent practice for fine motor skills and patience while creating impressive artwork that celebrates the golden age of rail travel. Educational opportunities include understanding steam power, transportation history, and the cultural impact of railways on society through detailed, historically accurate coloring activities.' }
+            ],
+            food: [
+                { id: 401, name: 'Ice Cream', emoji: '🍦', file: 'ice-cream.pdf', description: 'Delicious ice cream cone with multiple colorful scoops designed to teach children about frozen treats and temperature concepts through artistic expression. Perfect for summer activities and dessert-themed celebrations, this mouth-watering illustration features realistic textures, melting details, and classic cone patterns that capture the joy of enjoying cold treats on hot days. The vibrant design encourages discussions about states of matter, nutrition, and cultural food traditions while developing color recognition and artistic skills. Creates opportunities for learning about dairy products, temperature changes, and the science of freezing through creative coloring activities that celebrate everyone\'s favorite summertime indulgence.' },
+                { id: 402, name: 'Pizza', emoji: '🍕', file: 'pizza.pdf', description: 'Tasty pizza with all your favorite toppings arranged in perfect proportions for young food enthusiasts and culinary explorers. This appetizing coloring page features a classic round pizza with detailed cheese texture, crispy crust edges, and customizable toppings that teach children about food groups, nutrition, and cultural cuisines. The realistic presentation encourages discussions about Italian food culture, balanced meals, and the importance of sharing food with family and friends. Perfect for classroom nutrition lessons, birthday party activities, or rainy day creativity that combines culinary education with artistic expression through familiar, beloved food themes.' },
+                { id: 403, name: 'Birthday Cake', emoji: '🎂', file: 'birthday-cake.pdf', description: 'Celebration birthday cake with candles and festive decorations perfect for birthday parties and special occasion creativity. This festive coloring page features a multi-layered cake with glowing candles, colorful frosting, and celebratory decorations that capture the joy of birthday celebrations across all cultures. The detailed design includes frosting textures, candle flames, and decorative elements that provide excellent practice for fine motor skills while creating treasured birthday memories. Educational opportunities include counting candles, understanding age milestones, and celebrating cultural birthday traditions through artistic expression that makes every child feel special and valued.' }
+            ],
+            characters: [
+                { id: 501, name: 'Mickey Mouse', emoji: '🐭', file: 'Mickey mouse.pdf', description: 'Disney\'s beloved Mickey Mouse character coloring page featuring the iconic round ears, cheerful smile, and classic red shorts that have delighted children for generations. This timeless character illustration captures the magic of Disney storytelling while teaching children about character design, animation history, and the importance of imagination in creative expression. Perfect for Disney-themed parties, family movie nights, or rainy day activities that celebrate classic animation. The familiar character provides comfort and joy while developing artistic skills through coloring familiar faces that represent the golden age of animation and continue to inspire creativity across multiple generations of fans.' },
+                { id: 502, name: 'Princess', emoji: '👸', file: 'Princess.pdf', description: 'Beautiful princess coloring page for fairy tale fans who dream of magical kingdoms and royal adventures. This enchanting royal character features flowing gowns, sparkling crowns, and graceful details that celebrate imagination, kindness, and the power of believing in yourself. Perfect for birthday parties, sleepovers, or creative storytelling activities that encourage children to create their own magical narratives. The elegant design provides opportunities to discuss fairy tale morals, historical royal traditions, and the importance of inner beauty while developing artistic skills through detailed coloring that celebrates fantasy, creativity, and the timeless appeal of royal storytelling traditions.' }
+            ],
+            nature: [
+                { id: 601, name: 'Flower Garden', emoji: '🌸', file: 'flower-garden.pdf', description: 'Beautiful flower garden featuring various blooming species designed to teach children about botany, pollination, and the changing seasons through artistic exploration. This vibrant nature scene includes roses, daisies, and wildflowers arranged in a picturesque garden setting that celebrates the beauty of cultivated nature. Perfect for spring activities, Earth Day celebrations, or environmental education lessons that connect children with the natural world. The detailed petal structures and leaf patterns provide excellent practice for observation skills while creating artwork that celebrates biodiversity, seasonal changes, and the importance of gardens in supporting pollinators and local ecosystems.' },
+                { id: 602, name: 'Butterfly Garden', emoji: '🦋', file: 'butterfly-garden.pdf', description: 'Enchanting butterfly garden scene featuring colorful butterflies among blooming flowers that creates a magical nature experience. This detailed illustration combines the delicate beauty of butterflies with vibrant garden flowers, teaching children about pollination, insect-plant relationships, and the interconnected web of life. The complex botanical and entomological details provide excellent practice for fine motor skills while creating artwork that celebrates biodiversity and environmental stewardship. Perfect for nature study units, summer camp activities, or environmental education projects that foster appreciation for pollinators and the critical role gardens play in supporting local ecosystems and wildlife conservation efforts.' }
+            ],
+            educational: [
+                { id: 701, name: 'Alphabet A-Z', emoji: '🔤', file: 'alphabet.pdf', description: 'Complete alphabet coloring workbook featuring all twenty-six letters designed to teach letter recognition, phonics, and early literacy skills through creative artistic expression. Perfect for preschool and kindergarten students, this comprehensive educational resource combines letter formation practice with vocabulary building and artistic development. Each letter page includes corresponding objects and words that help children associate sounds with symbols while developing fine motor skills through coloring activities. The systematic approach builds confidence while challenging young learners to master essential early reading skills through enjoyable, hands-on activities that make learning letters fun, memorable, and developmentally appropriate for emerging readers.' },
+                { id: 702, name: 'Shapes', emoji: '⬜', file: 'shapes.pdf', description: 'Basic geometric shapes coloring pages designed for early learners to master fundamental mathematical concepts through creative exploration and artistic expression. This educational resource includes circles, squares, triangles, rectangles, and more complex polygons that teach shape recognition, spatial relationships, and mathematical vocabulary. Perfect for preschool and early elementary students, these pages combine mathematical learning with artistic development using clear outlines and engaging illustrations. The progressive difficulty builds confidence while challenging young learners to understand how shapes combine to create complex objects and structures, making abstract mathematical concepts concrete through hands-on coloring activities that support cognitive development and mathematical thinking.' }
+            ],
+            sports: [
+                { id: 801, name: 'Soccer Ball', emoji: '⚽', file: 'soccer-ball.pdf', description: 'Classic soccer ball pattern perfect for sports fans and young athletes who love the beautiful game of football. This authentic spherical design features traditional black and white pentagon patterns that teach children about geometric shapes, sports equipment design, and the global popularity of soccer. The detailed panel structure provides excellent practice for fine motor skills while creating artwork that celebrates physical activity and team sports. Educational opportunities include understanding sports equipment manufacturing, the physics of ball design, and the cultural significance of soccer worldwide. Perfect for sports-themed parties, physical education lessons, or encouraging active lifestyles through creative artistic expression.' },
+                { id: 802, name: 'Basketball', emoji: '🏀', file: 'basketball.pdf', description: 'Realistic basketball coloring page for sports enthusiasts that captures the dynamic texture and distinctive orange coloration of America\'s favorite indoor sport. This detailed sports equipment illustration features authentic panel lines, textured surface details, and proper proportions that teach children about sports equipment design and the physics of ball sports. Perfect for March Madness activities, basketball practice motivation, or sports-themed celebrations that combine athletic enthusiasm with artistic creativity. The familiar sports equipment provides opportunities to discuss teamwork, hand-eye coordination, and the importance of physical activity while developing artistic skills through detailed coloring that celebrates competitive sports and healthy lifestyles.' }
+            ]
+        };
+
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        const pdfId = parseInt(urlParams.get('id'));
+
+        function loadPDFDetail() {
+            if (!category || !pdfId) {
+                document.body.innerHTML = '<h1>Error: Invalid PDF parameters</h1>';
+                return;
+            }
+
+            const pdfs = pdfData[category] || [];
+            const pdf = pdfs.find(p => p.id === pdfId);
+
+            if (!pdf) {
+                document.body.innerHTML = '<h1>Error: PDF not found</h1>';
+                return;
+            }
+
+            // Update page content
+            document.getElementById('pdf-title').textContent = pdf.name;
+            document.getElementById('pdf-category').textContent = category.charAt(0).toUpperCase() + category.slice(1);
+            document.getElementById('pdf-emoji').textContent = pdf.emoji;
+            document.getElementById('pdf-description').textContent = pdf.description;
+            document.getElementById('stat-category').textContent = category.charAt(0).toUpperCase() + category.slice(1);
+            document.getElementById('download-link').href = `PDF素材/${pdf.file}`;
+            document.getElementById('download-link').download = pdf.file;
+
+            // Update breadcrumbs
+            document.getElementById('breadcrumb-category').textContent = category.charAt(0).toUpperCase() + category.slice(1);
+            document.getElementById('breadcrumb-category').href = `index.html#${category}`;
+            document.getElementById('breadcrumb-pdf').textContent = pdf.name;
+
+            // Load related PDFs
+            loadRelatedPDFs(category, pdfId);
+        }
+
+        function loadRelatedPDFs(currentCategory, currentId) {
+            const relatedGrid = document.getElementById('related-grid');
+            const pdfs = pdfData[currentCategory] || [];
+            
+            // Get 3-4 related PDFs from same category (excluding current one)
+            const relatedPDFs = pdfs.filter(p => p.id !== currentId).slice(0, 4);
+
+            relatedPDFs.forEach(relatedPdf => {
+                const card = document.createElement('a');
+                card.className = 'related-card';
+                card.href = `pdf-detail.html?category=${currentCategory}&id=${relatedPdf.id}`;
+                
+                card.innerHTML = `
+                    <div class="related-preview">${relatedPdf.emoji}</div>
+                    <div class="related-info">
+                        <div class="related-name">${relatedPdf.name}</div>
+                        <div class="related-category">${currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1)}</div>
+                    </div>
+                `;
+                
+                relatedGrid.appendChild(card);
+            });
+        }
+
+        // Load PDF detail on page load
+        loadPDFDetail();
+    </script>
+</body>
+</html>

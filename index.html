@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free printable color by number worksheets for kids. 242 PDF coloring pages across 8 categories - animals, holidays, vehicles, food, and more.">
+    <meta name="keywords" content="color by number printables, free kids coloring pages, PDF worksheets, educational activities, printable coloring books">
+    <title>Free Color by Number Printables | 242 PDF Coloring Pages for Kids</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafafa;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .nav-brand h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: #2563eb;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: #f59e0b;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Stats */
+        .stats-section {
+            background: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2563eb;
+            display: block;
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem;
+            margin-bottom: 0.25rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .category-item:hover {
+            background-color: #f3f4f6;
+        }
+
+        .category-item.active {
+            background-color: #eff6ff;
+            border-left: 3px solid #2563eb;
+        }
+
+        .category-name {
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .category-count {
+            background: #e5e7eb;
+            color: #6b7280;
+            padding: 0.25rem 0.5rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+        }
+
+        /* Content Area */
+        .content-area {
+            flex: 1;
+        }
+
+        .category-header {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .category-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-description {
+            color: #6b7280;
+            font-size: 1.125rem;
+        }
+
+        /* PDF Grid */
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .pdf-card {
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .pdf-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .pdf-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .pdf-info {
+            padding: 1rem;
+        }
+
+        .pdf-title {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .pdf-category {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Features */
+        .features {
+            background: white;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+            color: #6b7280;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+        }
+
+        .loading-spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #2563eb;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-layout {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                position: static;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1>🎨 ColorByNumbers.fun</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Free Color by Number Printables</h2>
+                <p>239 high-quality PDF coloring pages across 8 categories. Perfect for kids, parents, and teachers. All free to download!</p>
+                <a href="#categories" class="cta-button">Browse Categories</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <h2>📊 Our Collection</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">239</span>
+                    <span>Total Pages</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8</span>
+                    <span>Categories</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span>Free</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">PDF</span>
+                    <span>High Quality</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="main-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <h3>📁 Categories</h3>
+                <ul class="category-list">
+                    <li class="category-item active" data-category="animals">
+                        <span class="category-name">Animals</span>
+                        <span class="category-count">110</span>
+                    </li>
+                    <li class="category-item" data-category="holidays">
+                        <span class="category-name">Holidays</span>
+                        <span class="category-count">36</span>
+                    </li>
+                    <li class="category-item" data-category="vehicles">
+                        <span class="category-name">Vehicles</span>
+                        <span class="category-count">27</span>
+                    </li>
+                    <li class="category-item" data-category="food">
+                        <span class="category-name">Food</span>
+                        <span class="category-count">20</span>
+                    </li>
+                    <li class="category-item" data-category="characters">
+                        <span class="category-name">Characters</span>
+                        <span class="category-count">12</span>
+                    </li>
+                    <li class="category-item" data-category="nature">
+                        <span class="category-name">Nature</span>
+                        <span class="category-count">8</span>
+                    </li>
+                    <li class="category-item" data-category="educational">
+                        <span class="category-name">Educational</span>
+                        <span class="category-count">6</span>
+                    </li>
+                    <li class="category-item" data-category="sports">
+                        <span class="category-name">Sports</span>
+                        <span class="category-count">6</span>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Content Area -->
+            <main class="content-area">
+                <div class="category-header">
+                    <h1 class="category-title">Animals</h1>
+                    <p class="category-description">Discover 110 amazing animal coloring pages featuring wildlife, farm animals, sea creatures, birds, and insects.</p>
+                </div>
+
+                <div id="pdf-grid" class="pdf-grid">
+                    <!-- PDF cards will be populated here -->
+                </div>
+
+                <div id="loading" class="loading hidden">
+                    <div class="loading-spinner"></div>
+                    <p>Loading coloring pages...</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">✨ Why Choose Our Printables?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🆓</div>
+                    <div class="feature-title">100% Free</div>
+                    <div class="feature-description">No registration required. Download instantly.</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📚</div>
+                    <div class="feature-title">Educational</div>
+                    <div class="feature-description">Perfect for learning colors, numbers, and motor skills.</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <div class="feature-title">High Quality</div>
+                    <div class="feature-description">Printable PDF format with crisp, clear lines.</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-title">Organized</div>
+                    <div class="feature-description">Easy to browse with clear categories and descriptions.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 ColorByNumbers.fun - Free Educational Resources for Kids</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // Sample PDF data (in real app, this would come from your file system)
+        const pdfData = {
+            animals: [
+                { id: 1, name: 'Lion', emoji: '🦁', file: 'lion.pdf', description: 'A majestic lion perfect for young wildlife enthusiasts. Features clear number guides and bold outlines.' },
+                { id: 2, name: 'Elephant', emoji: '🐘', file: 'elephant.pdf', description: 'A gentle giant elephant coloring page with easy-to-follow number patterns.' },
+                { id: 3, name: 'Penguin', emoji: '🐧', file: 'penguin.pdf', description: 'Adorable penguin coloring page perfect for winter activities.' },
+                { id: 4, name: 'Dolphin', emoji: '🐬', file: 'dolphin.pdf', description: 'Playful dolphin swimming in the ocean - great for marine life lessons.' },
+                { id: 5, name: 'Rabbit', emoji: '🐰', file: 'rabbit.pdf', description: 'Cute bunny coloring page ideal for Easter or spring activities.' },
+                { id: 6, name: 'Butterfly', emoji: '🦋', file: 'butterfly.pdf', description: 'Beautiful butterfly with intricate wing patterns for advanced colorers.' }
+            ],
+            numbers: [
+                { id: 101, name: 'Numbers 1-10', emoji: '1️⃣', file: 'numbers-1-10.pdf', description: 'Perfect introduction to number recognition with 10 pages of fun activities.' },
+                { id: 102, name: 'Numbers 11-20', emoji: '🔢', file: 'numbers-11-20.pdf', description: 'Advanced number practice with creative designs.' }
+            ],
+            holidays: [
+                { id: 201, name: 'Christmas Tree', emoji: '🎄', file: 'christmas-tree.pdf', description: 'Festive Christmas tree with ornaments and presents.' },
+                { id: 202, name: 'Santa Claus', emoji: '🎅', file: 'santa-claus.pdf', description: 'Jolly Santa Claus delivering gifts - perfect for Christmas morning.' },
+                { id: 203, name: 'Halloween Pumpkin', emoji: '🎃', file: 'halloween-pumpkin.pdf', description: 'Spooky jack-o-lantern coloring page for Halloween fun.' }
+            ],
+            vehicles: [
+                { id: 301, name: 'Race Car', emoji: '🏎️', file: 'race-car.pdf', description: 'Fast and furious race car coloring page for speed enthusiasts.' },
+                { id: 302, name: 'Airplane', emoji: '✈️', file: 'airplane.pdf', description: 'High-flying airplane perfect for aviation lovers.' },
+                { id: 303, name: 'Train', emoji: '🚂', file: 'train.pdf', description: 'Classic steam train with detailed carriages to color.' }
+            ],
+            food: [
+                { id: 401, name: 'Ice Cream', emoji: '🍦', file: 'ice-cream.pdf', description: 'Delicious ice cream cone with multiple scoops to color.' },
+                { id: 402, name: 'Pizza', emoji: '🍕', file: 'pizza.pdf', description: 'Tasty pizza with all your favorite toppings.' },
+                { id: 403, name: 'Birthday Cake', emoji: '🎂', file: 'birthday-cake.pdf', description: 'Celebration birthday cake with candles and decorations.' }
+            ],
+            characters: [
+                { id: 501, name: 'Mickey Mouse', emoji: '🐭', file: 'mickey-mouse.pdf', description: 'Disney\'s beloved Mickey Mouse character coloring page.' },
+                { id: 502, name: 'Princess', emoji: '👸', file: 'princess.pdf', description: 'Beautiful princess coloring page for fairy tale fans.' }
+            ],
+            nature: [
+                { id: 601, name: 'Flower Garden', emoji: '🌸', file: 'flower-garden.pdf', description: 'Beautiful flower garden with various blooms to color.' },
+                { id: 602, name: 'Butterfly Garden', emoji: '🦋', file: 'butterfly-garden.pdf', description: 'Enchanting butterfly garden scene.' }
+            ],
+            educational: [
+                { id: 701, name: 'Alphabet A-Z', emoji: '🔤', file: 'alphabet.pdf', description: 'Complete alphabet coloring pages for letter recognition.' },
+                { id: 702, name: 'Shapes', emoji: '⬜', file: 'shapes.pdf', description: 'Basic geometric shapes coloring pages for early learners.' }
+            ],
+            sports: [
+                { id: 801, name: 'Soccer Ball', emoji: '⚽', file: 'soccer-ball.pdf', description: 'Classic soccer ball pattern perfect for sports fans.' },
+                { id: 802, name: 'Basketball', emoji: '🏀', file: 'basketball.pdf', description: 'Realistic basketball coloring page for sports enthusiasts.' }
+            ]
+        };
+
+        let currentCategory = 'animals';
+
+        function loadPDFs(category) {
+            const grid = document.getElementById('pdf-grid');
+            const loading = document.getElementById('loading');
+            
+            // Update active category
+            document.querySelectorAll('.category-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelector(`[data-category="${category}"]`).classList.add('active');
+
+            // Show loading
+            grid.innerHTML = '';
+            loading.classList.remove('hidden');
+
+            // Simulate loading delay
+            setTimeout(() => {
+                loading.classList.add('hidden');
+                
+                const pdfs = pdfData[category] || [];
+                const categoryHeader = document.querySelector('.category-header');
+                
+                const titles = {
+                    animals: 'Animals',
+                    numbers: 'Numbers',
+                    holidays: 'Holidays',
+                    vehicles: 'Vehicles',
+                    food: 'Food',
+                    characters: 'Characters',
+                    nature: 'Nature',
+                    educational: 'Educational',
+                    sports: 'Sports'
+                };
+
+                const descriptions = {
+                    animals: 'Discover 110 amazing animal coloring pages featuring wildlife, farm animals, sea creatures, birds, and insects.',
+                    holidays: '36 festive holiday coloring pages for Christmas, Halloween, Thanksgiving, and more.',
+                    vehicles: '27 exciting vehicle coloring pages including cars, trains, planes, and ships.',
+                    food: '20 delicious food coloring pages featuring cakes, fruits, vegetables, and treats.',
+                    characters: '12 fun character coloring pages including Disney favorites and fantasy figures.',
+                    nature: '8 beautiful nature coloring pages with flowers, trees, and landscapes.',
+                    educational: '6 educational coloring pages focusing on shapes, letters, and numbers.',
+                    sports: '6 sporty coloring pages featuring balls, equipment, and activities.'
+                };
+
+                categoryHeader.querySelector('.category-title').textContent = titles[category];
+                categoryHeader.querySelector('.category-description').textContent = descriptions[category];
+
+                pdfs.forEach(pdf => {
+                    const card = document.createElement('div');
+                    card.className = 'pdf-card';
+                    card.innerHTML = `
+                        <div class="pdf-placeholder">${pdf.emoji}</div>
+                        <div class="pdf-info">
+                            <div class="pdf-title">${pdf.name}</div>
+                            <div class="pdf-category">${titles[category]}</div>
+                            <div style="color: #6b7280; font-size: 0.875rem; margin-top: 0.5rem;">Click to download</div>
+                        </div>
+                    `;
+                    card.onclick = () => openPDFDetail(pdf, category);
+                    grid.appendChild(card);
+                });
+            }, 500);
+        }
+
+        function openPDFDetail(pdf, categoryName) {
+            window.location.href = `pdf-detail.html?category=${categoryName}&id=${pdf.id}`;
+        }
+
+        // Event listeners
+        document.querySelectorAll('.category-item').forEach(item => {
+            item.addEventListener('click', () => {
+                currentCategory = item.dataset.category;
+                loadPDFs(currentCategory);
+            });
+        });
+
+        
+        // Initial load
+        loadPDFs('animals');
+    </script>
+</body>
+</html>
