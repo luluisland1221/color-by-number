@@ -222,6 +222,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 1.5rem;
+            margin: 2rem 0;
         }
 
         .pdf-card {
@@ -230,7 +231,10 @@
             overflow: hidden;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
+            text-align: center;
+            position: relative;
+            min-height: 465px;
+            background: white;
         }
 
         .pdf-card:hover {
@@ -238,15 +242,25 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
-        .pdf-placeholder {
+        .pdf-preview-container {
+            position: relative;
             width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 384.67px;
+            overflow: hidden;
+            background: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 3rem;
+            border: 1px solid #e5e5e5;
+        }
+
+        .pdf-embed {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+            transform: scale(1.05);
+            transform-origin: center center;
         }
 
         .pdf-info {
@@ -256,13 +270,26 @@
         .pdf-title {
             font-weight: 600;
             color: #1f2937;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
+            font-size: 1.125rem;
         }
 
-        .pdf-category {
-            color: #6b7280;
+        .download-btn {
+            background: #2563eb;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 0.5rem;
+            transition: background-color 0.2s;
             font-size: 0.875rem;
-            margin-bottom: 0.5rem;
+        }
+
+        .download-btn:hover {
+            background: #1d4ed8;
         }
 
         /* Features */
@@ -499,65 +526,72 @@
 
 
     <script>
-        // Sample PDF data (in real app, this would come from your file system)
-        const pdfData = {
-            animals: [
-                { id: 1, name: 'Lion', emoji: '🦁', file: 'lion.pdf', description: 'A majestic lion perfect for young wildlife enthusiasts. Features clear number guides and bold outlines.' },
-                { id: 2, name: 'Elephant', emoji: '🐘', file: 'elephant.pdf', description: 'A gentle giant elephant coloring page with easy-to-follow number patterns.' },
-                { id: 3, name: 'Penguin', emoji: '🐧', file: 'penguin.pdf', description: 'Adorable penguin coloring page perfect for winter activities.' },
-                { id: 4, name: 'Dolphin', emoji: '🐬', file: 'dolphin.pdf', description: 'Playful dolphin swimming in the ocean - great for marine life lessons.' },
-                { id: 5, name: 'Rabbit', emoji: '🐰', file: 'rabbit.pdf', description: 'Cute bunny coloring page ideal for Easter or spring activities.' },
-                { id: 6, name: 'Butterfly', emoji: '🦋', file: 'butterfly.pdf', description: 'Beautiful butterfly with intricate wing patterns for advanced colorers.' }
-            ],
-            numbers: [
-                { id: 101, name: 'Numbers 1-10', emoji: '1️⃣', file: 'numbers-1-10.pdf', description: 'Perfect introduction to number recognition with 10 pages of fun activities.' },
-                { id: 102, name: 'Numbers 11-20', emoji: '🔢', file: 'numbers-11-20.pdf', description: 'Advanced number practice with creative designs.' }
-            ],
-            holidays: [
-                { id: 201, name: 'Christmas Tree', emoji: '🎄', file: 'christmas-tree.pdf', description: 'Festive Christmas tree with ornaments and presents.' },
-                { id: 202, name: 'Santa Claus', emoji: '🎅', file: 'santa-claus.pdf', description: 'Jolly Santa Claus delivering gifts - perfect for Christmas morning.' },
-                { id: 203, name: 'Halloween Pumpkin', emoji: '🎃', file: 'halloween-pumpkin.pdf', description: 'Spooky jack-o-lantern coloring page for Halloween fun.' }
-            ],
-            vehicles: [
-                { id: 301, name: 'Race Car', emoji: '🏎️', file: 'race-car.pdf', description: 'Fast and furious race car coloring page for speed enthusiasts.' },
-                { id: 302, name: 'Airplane', emoji: '✈️', file: 'airplane.pdf', description: 'High-flying airplane perfect for aviation lovers.' },
-                { id: 303, name: 'Train', emoji: '🚂', file: 'train.pdf', description: 'Classic steam train with detailed carriages to color.' }
-            ],
-            food: [
-                { id: 401, name: 'Ice Cream', emoji: '🍦', file: 'ice-cream.pdf', description: 'Delicious ice cream cone with multiple scoops to color.' },
-                { id: 402, name: 'Pizza', emoji: '🍕', file: 'pizza.pdf', description: 'Tasty pizza with all your favorite toppings.' },
-                { id: 403, name: 'Birthday Cake', emoji: '🎂', file: 'birthday-cake.pdf', description: 'Celebration birthday cake with candles and decorations.' }
-            ],
-            characters: [
-                { id: 501, name: 'Mickey Mouse', emoji: '🐭', file: 'mickey-mouse.pdf', description: 'Disney\'s beloved Mickey Mouse character coloring page.' },
-                { id: 502, name: 'Princess', emoji: '👸', file: 'princess.pdf', description: 'Beautiful princess coloring page for fairy tale fans.' }
-            ],
-            nature: [
-                { id: 601, name: 'Flower Garden', emoji: '🌸', file: 'flower-garden.pdf', description: 'Beautiful flower garden with various blooms to color.' },
-                { id: 602, name: 'Butterfly Garden', emoji: '🦋', file: 'butterfly-garden.pdf', description: 'Enchanting butterfly garden scene.' }
-            ],
-            educational: [
-                { id: 701, name: 'Alphabet A-Z', emoji: '🔤', file: 'alphabet.pdf', description: 'Complete alphabet coloring pages for letter recognition.' },
-                { id: 702, name: 'Shapes', emoji: '⬜', file: 'shapes.pdf', description: 'Basic geometric shapes coloring pages for early learners.' }
-            ],
-            sports: [
-                { id: 801, name: 'Soccer Ball', emoji: '⚽', file: 'soccer-ball.pdf', description: 'Classic soccer ball pattern perfect for sports fans.' },
-                { id: 802, name: 'Basketball', emoji: '🏀', file: 'basketball.pdf', description: 'Realistic basketball coloring page for sports enthusiasts.' }
-            ]
+        // Category navigation data
+        const categoryData = {
+            animals: {
+                title: 'Animals',
+                description: 'Discover 110 amazing animal coloring pages organized into 5 subcategories: wild animals, farm animals, sea creatures, birds, and insects.',
+                url: 'categories/animals.html',
+                preview: 'https://color-by-number.site/pdf/lion.pdf',
+                count: 110
+            },
+            holidays: {
+                title: 'Holidays',
+                description: '36 festive holiday coloring pages for Christmas, Halloween, Thanksgiving, and more.',
+                url: 'categories/holidays.html',
+                preview: 'https://color-by-number.site/pdf/christmas-tree.pdf',
+                count: 36
+            },
+            vehicles: {
+                title: 'Vehicles',
+                description: '27 exciting vehicle coloring pages including cars, trains, planes, and ships.',
+                url: 'categories/vehicles.html',
+                preview: 'https://color-by-number.site/pdf/race-car.pdf',
+                count: 27
+            },
+            food: {
+                title: 'Food',
+                description: '20 delicious food coloring pages organized into 6 subcategories: cakes, ice cream, fruits, vegetables, fast food, and candy.',
+                url: 'categories/food.html',
+                preview: 'https://color-by-number.site/pdf/cake.pdf',
+                count: 20
+            },
+            characters: {
+                title: 'Characters',
+                description: '12 fun character coloring pages including Disney favorites and fantasy figures.',
+                url: 'categories/characters.html',
+                preview: 'https://color-by-number.site/pdf/mickey-mouse.pdf',
+                count: 12
+            },
+            nature: {
+                title: 'Nature',
+                description: '8 beautiful nature coloring pages with flowers, trees, and landscapes.',
+                url: 'categories/nature.html',
+                preview: 'https://color-by-number.site/pdf/flower-garden.pdf',
+                count: 8
+            },
+            educational: {
+                title: 'Educational',
+                description: '6 educational coloring pages focusing on shapes, letters, and numbers.',
+                url: 'categories/educational.html',
+                preview: 'https://color-by-number.site/pdf/alphabet-a.pdf',
+                count: 6
+            },
+            sports: {
+                title: 'Sports',
+                description: '6 sporty coloring pages featuring balls, equipment, and activities.',
+                url: 'categories/sports.html',
+                preview: 'https://color-by-number.site/pdf/soccer-ball.pdf',
+                count: 6
+            }
         };
 
         let currentCategory = 'animals';
 
-        function loadPDFs(category) {
+        function loadCategories() {
             const grid = document.getElementById('pdf-grid');
             const loading = document.getElementById('loading');
             
-            // Update active category
-            document.querySelectorAll('.category-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            document.querySelector(`[data-category="${category}"]`).classList.add('active');
-
             // Show loading
             grid.innerHTML = '';
             loading.classList.remove('hidden');
@@ -566,47 +600,35 @@
             setTimeout(() => {
                 loading.classList.add('hidden');
                 
-                const pdfs = pdfData[category] || [];
-                const categoryHeader = document.querySelector('.category-header');
-                
-                const titles = {
-                    animals: 'Animals',
-                    numbers: 'Numbers',
-                    holidays: 'Holidays',
-                    vehicles: 'Vehicles',
-                    food: 'Food',
-                    characters: 'Characters',
-                    nature: 'Nature',
-                    educational: 'Educational',
-                    sports: 'Sports'
-                };
-
-                const descriptions = {
-                    animals: 'Discover 110 amazing animal coloring pages featuring wildlife, farm animals, sea creatures, birds, and insects.',
-                    holidays: '36 festive holiday coloring pages for Christmas, Halloween, Thanksgiving, and more.',
-                    vehicles: '27 exciting vehicle coloring pages including cars, trains, planes, and ships.',
-                    food: '20 delicious food coloring pages featuring cakes, fruits, vegetables, and treats.',
-                    characters: '12 fun character coloring pages including Disney favorites and fantasy figures.',
-                    nature: '8 beautiful nature coloring pages with flowers, trees, and landscapes.',
-                    educational: '6 educational coloring pages focusing on shapes, letters, and numbers.',
-                    sports: '6 sporty coloring pages featuring balls, equipment, and activities.'
-                };
-
-                categoryHeader.querySelector('.category-title').textContent = titles[category];
-                categoryHeader.querySelector('.category-description').textContent = descriptions[category];
-
-                pdfs.forEach(pdf => {
+                // Show all categories as cards
+                Object.keys(categoryData).forEach(categoryKey => {
+                    const category = categoryData[categoryKey];
                     const card = document.createElement('div');
                     card.className = 'pdf-card';
+                    card.style.cursor = 'pointer';
+                    
                     card.innerHTML = `
-                        <div class="pdf-placeholder">${pdf.emoji}</div>
+                        <div class="pdf-preview-container">
+                            <iframe class="pdf-embed" 
+                                    src="${category.preview}#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
+                                    frameborder="0" 
+                                    scrolling="no">
+                            </iframe>
+                        </div>
                         <div class="pdf-info">
-                            <div class="pdf-title">${pdf.name}</div>
-                            <div class="pdf-category">${titles[category]}</div>
-                            <div style="color: #6b7280; font-size: 0.875rem; margin-top: 0.5rem;">Click to download</div>
+                            <div class="pdf-title">${category.title}</div>
+                            <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 0.5rem;">${category.description}</p>
+                            <button class="download-btn" style="background: #2563eb;" onclick="window.location.href='${category.url}'">
+                                View ${category.count} Pages
+                            </button>
                         </div>
                     `;
-                    card.onclick = () => openPDFDetail(pdf, category);
+                    
+                    // Navigate to category page on click
+                    card.addEventListener('click', () => {
+                        window.location.href = category.url;
+                    });
+                    
                     grid.appendChild(card);
                 });
             }, 500);
@@ -616,17 +638,19 @@
             window.location.href = `pdf-detail.html?category=${categoryName}&id=${pdf.id}`;
         }
 
-        // Event listeners
+
+        // Event listeners - now categories navigate to separate pages
         document.querySelectorAll('.category-item').forEach(item => {
             item.addEventListener('click', () => {
-                currentCategory = item.dataset.category;
-                loadPDFs(currentCategory);
+                const categoryKey = item.dataset.category;
+                if (categoryData[categoryKey]) {
+                    window.location.href = categoryData[categoryKey].url;
+                }
             });
         });
-
         
-        // Initial load
-        loadPDFs('animals');
+        // Initial load - show all categories
+        loadCategories();
     </script>
 </body>
 </html>

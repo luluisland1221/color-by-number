@@ -158,7 +158,7 @@ color-by-number-fun/
 - [ ] User accounts for saving favorites
 - [ ] Print progress tracking
 - [ ] Custom coloring page requests
-- [ ] Multi-language support
+- [ ] Multi-language support (Note: Currently English-only to maintain consistency)
 - [ ] Printable certificates of completion
 - [ ] Seasonal collections and bundles
 
@@ -202,10 +202,19 @@ We welcome contributions! Please:
 5. Submit a pull request with clear description
 
 ### Content Guidelines
+- **Language**: **ENGLISH ONLY** - All user-facing content must be in English. No Chinese characters or other non-English text allowed in HTML, CSS, or JavaScript files.
 - **Age Appropriate**: Ensure content is suitable for target age group
 - **Educational Value**: Include learning elements (numbers, colors, etc.)
 - **Copyright**: Only use original or properly licensed artwork
 - **Quality**: High-resolution images (300 DPI minimum)
+
+### Language Policy Enforcement
+- All HTML lang attributes must be `lang="en"`
+- All page titles and meta descriptions in English
+- All navigation and button text in English
+- All PDF filenames must use English names
+- No Chinese characters in file paths or URLs
+- Regular verification using regex search: `[\u4e00-\u9fff]`
 
 ## License
 

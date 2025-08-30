@@ -1,57 +1,77 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="110个免费动物数字填色卡下载 - 包含野生动物、农场动物、海洋生物、鸟类、昆虫等">
-    <title>动物世界数字填色卡 - 110个免费PDF下载</title>
+    <meta name="description" content="110 free animal coloring pages - wildlife, farm animals, sea creatures, birds, insects and more">
+    <title>Animal Kingdom Coloring Pages - 110 Free PDF Downloads</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
         .subcategory-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
         
-        .subcategory-item {
+        .subcategory-card {
             background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .animal-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        
-        .animal-card {
-            background: white;
-            border-radius: 8px;
-            padding: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.2s;
-        }
-        
-        .animal-card:hover {
-            transform: scale(1.05);
-        }
-        
-        .download-btn {
-            background: #ff6b6b;
-            color: white;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 4px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
+        }
+        
+        .subcategory-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+        
+        .subcategory-header {
+            padding: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .subcategory-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subcategory-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subcategory-stats {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .subcategory-description {
+            padding: 1.5rem;
+            color: #6b7280;
+            text-align: center;
+        }
+        
+        .view-btn {
+            background: #2563eb;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
             text-decoration: none;
             display: inline-block;
-            margin-top: 0.5rem;
+            margin: 1rem 0;
+            transition: background-color 0.2s;
+        }
+        
+        .view-btn:hover {
+            background: #1d4ed8;
         }
     </style>
 </head>
@@ -60,11 +80,11 @@
         <nav class="nav">
             <div class="container">
                 <div class="nav-brand">
-                    <h1>🐾 动物世界填色卡</h1>
+                    <h1>🐾 Animal Kingdom Coloring Pages</h1>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../index.html#categories">返回分类</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#categories">Categories</a></li>
                 </ul>
             </div>
         </nav>
@@ -73,92 +93,86 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h2>🦁 动物世界 - 110个精美填色卡</h2>
-                <p>包含野生动物、农场动物、海洋生物、鸟类、昆虫等多个子类别</p>
+                <h2>🦁 Animal Kingdom - 110 Amazing Coloring Pages</h2>
+                <p>Wildlife, farm animals, sea creatures, birds, insects and more subcategories</p>
             </div>
         </section>
 
         <section class="container">
-            <h3>📊 分类统计</h3>
+            <h3>📊 Animal Subcategories</h3>
             <div class="subcategory-grid">
-                <div class="subcategory-item">
-                    <h4>🐘 野生动物</h4>
-                    <p>64个文件</p>
-                    <small>大象、狮子、长颈鹿、猴子、熊等</small>
+                <div class="subcategory-card" onclick="window.location.href='animals/wild-animals.html'">
+                    <div class="subcategory-header">
+                        <div class="subcategory-icon">🦁</div>
+                        <div class="subcategory-title">Wild Animals</div>
+                        <div class="subcategory-stats">64 Files</div>
+                    </div>
+                    <div class="subcategory-description">
+                        <p>Elephants, lions, giraffes, monkeys, bears and more majestic wildlife</p>
+                        <a href="animals/wild-animals.html" class="view-btn">View Collection</a>
+                    </div>
                 </div>
-                <div class="subcategory-item">
-                    <h4>🐄 农场动物</h4>
-                    <p>23个文件</p>
-                    <small>兔子、猪、狗、猫、牛、山羊等</small>
-                </div>
-                <div class="subcategory-item">
-                    <h4>🐋 海洋动物</h4>
-                    <p>19个文件</p>
-                    <small>鲸鱼、海豚、海龟、章鱼、热带鱼等</small>
-                </div>
-                <div class="subcategory-item">
-                    <h4>🐧 鸟类</h4>
-                    <p>11个文件</p>
-                    <small>企鹅、鹦鹉、孔雀、鸭子等</small>
-                </div>
-                <div class="subcategory-item">
-                    <h4>🦋 昆虫类</h4>
-                    <p>12个文件</p>
-                    <small>蝴蝶、蜜蜂、瓢虫、蜗牛等</small>
-                </div>
-            </div>
 
-            <h3>🎯 热门动物填色卡</h3>
-            <div class="animal-grid">
-                <div class="animal-card">
-                    <h4>🦁 狮子</h4>
-                    <p>威武的丛林之王</p>
-                    <a href="../../PDF素材/lion.pdf" class="download-btn" download>下载</a>
+                <div class="subcategory-card" onclick="window.location.href='animals/farm-animals.html'">
+                    <div class="subcategory-header">
+                        <div class="subcategory-icon">🐄</div>
+                        <div class="subcategory-title">Farm Animals</div>
+                        <div class="subcategory-stats">23 Files</div>
+                    </div>
+                    <div class="subcategory-description">
+                        <p>Rabbits, pigs, dogs, cats, cows, goats and more adorable farm friends</p>
+                        <a href="animals/farm-animals.html" class="view-btn">View Collection</a>
+                    </div>
                 </div>
-                <div class="animal-card">
-                    <h4>🐘 大象</h4>
-                    <p>聪明的巨型动物</p>
-                    <a href="../../PDF素材/elephant.pdf" class="download-btn" download>下载</a>
-                </div>
-                <div class="animal-card">
-                    <h4>🐧 企鹅</h4>
-                    <p>可爱的南极居民</p>
-                    <a href="../../PDF素材/penguin2.pdf" class="download-btn" download>下载</a>
-                </div>
-                <div class="animal-card">
-                    <h4>🐬 海豚</h4>
-                    <p>聪明的海洋精灵</p>
-                    <a href="../../PDF素材/dolphin2.pdf" class="download-btn" download>下载</a>
-                </div>
-                <div class="animal-card">
-                    <h4>🐰 兔子</h4>
-                    <p>可爱的农场小动物</p>
-                    <a href="../../PDF素材/rabbit.pdf" class="download-btn" download>下载</a>
-                </div>
-                <div class="animal-card">
-                    <h4>🦋 蝴蝶</h4>
-                    <p>美丽的飞行精灵</p>
-                    <a href="../../PDF素材/butterfly.pdf" class="download-btn" download>下载</a>
-                </div>
-            </div>
 
-            <div class="bulk-download">
-                <h3>📦 批量下载</h3>
-                <p>下载完整的动物世界分类包</p>
-                <button class="download-btn" onclick="downloadAllAnimals()">下载全部110个文件</button>
+                <div class="subcategory-card" onclick="window.location.href='animals/sea-animals.html'">
+                    <div class="subcategory-header">
+                        <div class="subcategory-icon">🐋</div>
+                        <div class="subcategory-title">Sea Animals</div>
+                        <div class="subcategory-stats">19 Files</div>
+                    </div>
+                    <div class="subcategory-description">
+                        <p>Whales, dolphins, sea turtles, octopuses, tropical fish and more marine life</p>
+                        <a href="animals/sea-animals.html" class="view-btn">View Collection</a>
+                    </div>
+                </div>
+
+                <div class="subcategory-card" onclick="window.location.href='animals/birds.html'">
+                    <div class="subcategory-header">
+                        <div class="subcategory-icon">🐧</div>
+                        <div class="subcategory-title">Birds</div>
+                        <div class="subcategory-stats">11 Files</div>
+                    </div>
+                    <div class="subcategory-description">
+                        <p>Penguins, parrots, peacocks, ducks and more beautiful feathered friends</p>
+                        <a href="animals/birds.html" class="view-btn">View Collection</a>
+                    </div>
+                </div>
+
+                <div class="subcategory-card" onclick="window.location.href='animals/insects.html'">
+                    <div class="subcategory-header">
+                        <div class="subcategory-icon">🦋</div>
+                        <div class="subcategory-title">Insects</div>
+                        <div class="subcategory-stats">12 Files</div>
+                    </div>
+                    <div class="subcategory-description">
+                        <p>Butterflies, bees, ladybugs, snails and more fascinating tiny creatures</p>
+                        <a href="animals/insects.html" class="view-btn">View Collection</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 数字填色乐园. 免费教育资源</p>
+            <p>&copy; 2024 ColorByNumbers.fun - Free Educational Resources</p>
         </div>
     </footer>
 
     <script>
         function downloadAllAnimals() {
-            alert('正在准备下载...由于文件较多，建议分批下载');
+            alert('Preparing download... Due to the large number of files, we recommend downloading in batches.');
         }
     </script>
 </body>
