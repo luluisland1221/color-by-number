@@ -544,77 +544,77 @@
                 title: 'Birds',
                 description: '17 beautiful bird coloring pages featuring parrots, owls, penguins, ducks, and more amazing birds from around the world.',
                 url: 'categories/birds.html',
-                preview: 'https://color-by-number.site/pdf/parrot.pdf',
+                preview: 'https://color-by-number.site/pdf/parrot.png',
                 count: 17
             },
             'land-animals': {
                 title: 'Land Animals',
                 description: '20 amazing land animal coloring pages featuring bears, dogs, cats, farm animals, and wild animals from around the world.',
                 url: 'categories/land-animals.html',
-                preview: 'https://color-by-number.site/pdf/bear.pdf',
+                preview: 'https://color-by-number.site/pdf/cow.png',
                 count: 20
             },
             'ocean-animals': {
                 title: 'Ocean Animals',
                 description: '15 fascinating ocean animal coloring pages featuring fish, whales, dolphins, sea creatures, and underwater life.',
                 url: 'categories/ocean-animals.html',
-                preview: 'https://color-by-number.site/pdf/fish.pdf',
+                preview: 'https://color-by-number.site/pdf/fish.png',
                 count: 15
             },
             insects: {
                 title: 'Insects',
                 description: '12 fascinating insect coloring pages featuring beautiful butterflies, busy bees, and other amazing bugs.',
                 url: 'categories/insects.html',
-                preview: 'https://color-by-number.site/pdf/butterfly.pdf',
+                preview: 'https://color-by-number.site/pdf/butterfly.png',
                 count: 12
             },
             holidays: {
                 title: 'Holidays',
                 description: '36 festive holiday coloring pages for Christmas, Halloween, Thanksgiving, and more.',
                 url: 'categories/holidays.html',
-                preview: 'https://color-by-number.site/pdf/christmas-tree.pdf',
+                preview: 'https://color-by-number.site/pdf/christmastree.png',
                 count: 36
             },
             vehicles: {
                 title: 'Vehicles',
                 description: '27 exciting vehicle coloring pages including cars, trains, planes, and ships.',
                 url: 'categories/vehicles.html',
-                preview: 'https://color-by-number.site/pdf/race-car.pdf',
+                preview: 'https://color-by-number.site/pdf/car2.png',
                 count: 27
             },
             food: {
                 title: 'Food',
                 description: '20 delicious food coloring pages organized into 6 subcategories: cakes, ice cream, fruits, vegetables, fast food, and candy.',
                 url: 'categories/food.html',
-                preview: 'https://color-by-number.site/pdf/cake.pdf',
+                preview: 'https://color-by-number.site/pdf/cake.png',
                 count: 20
             },
             characters: {
                 title: 'Characters',
                 description: '12 fun character coloring pages including Disney favorites and fantasy figures.',
                 url: 'categories/characters.html',
-                preview: 'https://color-by-number.site/pdf/mickey-mouse.pdf',
+                preview: 'https://color-by-number.site/pdf/mickeymouse.png',
                 count: 12
             },
             nature: {
                 title: 'Nature',
                 description: '8 beautiful nature coloring pages with flowers, trees, and landscapes.',
                 url: 'categories/nature.html',
-                preview: 'https://color-by-number.site/pdf/flower-garden.pdf',
+                preview: 'https://color-by-number.site/pdf/flower.png',
                 count: 8
             },
             educational: {
                 title: 'Educational',
                 description: '6 educational coloring pages focusing on shapes, letters, and numbers.',
                 url: 'categories/educational.html',
-                preview: 'https://color-by-number.site/pdf/alphabet-a.pdf',
+                preview: 'https://color-by-number.site/pdf/geometry.png',
                 count: 6
             },
             sports: {
                 title: 'Sports',
                 description: '6 sporty coloring pages featuring balls, equipment, and activities.',
                 url: 'categories/sports.html',
-                preview: 'https://color-by-number.site/pdf/soccer-ball.pdf',
+                preview: 'https://color-by-number.site/pdf/ball2.png',
                 count: 6
             }
         };
@@ -642,11 +642,11 @@
                     
                     card.innerHTML = `
                         <div class="pdf-preview-container">
-                            <iframe class="pdf-embed" 
-                                    src="${category.preview}#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
-                                    frameborder="0" 
-                                    scrolling="no">
-                            </iframe>
+                            <img class="pdf-embed" 
+                                 src="${category.preview}" 
+                                 alt="${category.title} Preview"
+                                 style="width: 100%; height: 100%; object-fit: contain;"
+                                 loading="lazy">
                         </div>
                         <div class="pdf-info">
                             <div class="pdf-title">${category.title}</div>
