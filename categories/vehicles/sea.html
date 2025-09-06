@@ -156,6 +156,31 @@
             background: white;
             transform: scale(1.05);
             transform-origin: center center;
+            margin: 0;
+            padding: 0;
+            display: block;
+            overflow: hidden;
+        }
+
+        .sea-preview-container {
+            overflow: hidden;
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        @supports (-webkit-appearance: none) {
+            .pdf-embed {
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+        }
+
+        @supports (-ms-ime-align: auto) {
+            .pdf-embed {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
         }
 
         .sea-info {

@@ -156,6 +156,17 @@
             background: white;
             transform: scale(1.05);
             transform-origin: center center;
+            margin: 0;
+            padding: 0;
+            display: block;
+            overflow: hidden;
+        }
+
+        .land-preview-container {
+            overflow: hidden;
+            border: none;
+            margin: 0;
+            padding: 0;
         }
 
         .land-card:nth-child(2) .land-preview-container {
@@ -163,6 +174,20 @@
             align-items: center;
             justify-content: center;
             background: white;
+        }
+
+        @supports (-webkit-appearance: none) {
+            .pdf-embed {
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+        }
+
+        @supports (-ms-ime-align: auto) {
+            .pdf-embed {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
         }
 
         
@@ -245,27 +270,40 @@
             <div class="container">
                 <div class="category-header">
                     <h1 class="category-title">Land Vehicles Coloring Pages</h1>
-                    <p class="category-description">Discover 11 exciting land vehicle coloring pages including cars, trucks, buses, and trains.</p>
+                    <p class="category-description">Discover 10 exciting land vehicle coloring pages including cars, trucks, buses, and trains.</p>
                 </div>
 
                 <div class="land-grid">
                     <div class="land-card">
                         <div class="land-preview-container">
                             <iframe class="pdf-embed" 
-                                    src="https://color-by-number.site/pdf/car.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
+                                    src="https://color-by-number.site/pdf/car2.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
                                     frameborder="0" 
                                     scrolling="no">
                             </iframe>
                         </div>
                         <div class="land-info">
                             <div class="land-title">Car</div>
-                            <a href="https://color-by-number.site/pdf/car.pdf" class="download-btn" download>Download PDF</a>
+                            <a href="https://color-by-number.site/pdf/car2.pdf" class="download-btn" download>Download PDF</a>
                         </div>
                     </div>
                     <div class="land-card">
                         <div class="land-preview-container">
                             <iframe class="pdf-embed" 
-                                    src="https://color-by-number.site/pdf/sportscar.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitV" 
+                                    src="https://color-by-number.site/pdf/car3.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitV" 
+                                    frameborder="0" 
+                                    scrolling="no">
+                            </iframe>
+                        </div>
+                        <div class="land-info">
+                            <div class="land-title">Cool Car</div>
+                            <a href="https://color-by-number.site/pdf/car3.pdf" class="download-btn" download>Download PDF</a>
+                        </div>
+                    </div>
+                    <div class="land-card">
+                        <div class="land-preview-container">
+                            <iframe class="pdf-embed" 
+                                    src="https://color-by-number.site/pdf/sportscar.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
                                     frameborder="0" 
                                     scrolling="no">
                             </iframe>
@@ -278,40 +316,27 @@
                     <div class="land-card">
                         <div class="land-preview-container">
                             <iframe class="pdf-embed" 
-                                    src="https://color-by-number.site/pdf/truck.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
+                                    src="https://color-by-number.site/pdf/concretemixertruck.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
                                     frameborder="0" 
                                     scrolling="no">
                             </iframe>
                         </div>
                         <div class="land-info">
-                            <div class="land-title">Truck</div>
-                            <a href="https://color-by-number.site/pdf/truck.pdf" class="download-btn" download>Download PDF</a>
+                            <div class="land-title">Concrete Mixer</div>
+                            <a href="https://color-by-number.site/pdf/concretemixertruck.pdf" class="download-btn" download>Download PDF</a>
                         </div>
                     </div>
                     <div class="land-card">
                         <div class="land-preview-container">
                             <iframe class="pdf-embed" 
-                                    src="https://color-by-number.site/pdf/dumptruck.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
+                                    src="https://color-by-number.site/pdf/tankertruck.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
                                     frameborder="0" 
                                     scrolling="no">
                             </iframe>
                         </div>
                         <div class="land-info">
-                            <div class="land-title">Dump Truck</div>
-                            <a href="https://color-by-number.site/pdf/dumptruck.pdf" class="download-btn" download>Download PDF</a>
-                        </div>
-                    </div>
-                    <div class="land-card">
-                        <div class="land-preview-container">
-                            <iframe class="pdf-embed" 
-                                    src="https://color-by-number.site/pdf/firetruck.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
-                                    frameborder="0" 
-                                    scrolling="no">
-                            </iframe>
-                        </div>
-                        <div class="land-info">
-                            <div class="land-title">Fire Truck</div>
-                            <a href="https://color-by-number.site/pdf/firetruck.pdf" class="download-btn" download>Download PDF</a>
+                            <div class="land-title">Tanker Truck</div>
+                            <a href="https://color-by-number.site/pdf/tankertruck.pdf" class="download-btn" download>Download PDF</a>
                         </div>
                     </div>
                     <div class="land-card">
@@ -330,27 +355,40 @@
                     <div class="land-card">
                         <div class="land-preview-container">
                             <iframe class="pdf-embed" 
-                                    src="https://color-by-number.site/pdf/train.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
+                                    src="https://color-by-number.site/pdf/bus2.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
+                                    frameborder="0" 
+                                    scrolling="no">
+                            </iframe>
+                        </div>
+                        <div class="land-info">
+                            <div class="land-title">City Bus</div>
+                            <a href="https://color-by-number.site/pdf/bus2.pdf" class="download-btn" download>Download PDF</a>
+                        </div>
+                    </div>
+                    <div class="land-card">
+                        <div class="land-preview-container">
+                            <iframe class="pdf-embed" 
+                                    src="https://color-by-number.site/pdf/train2.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
                                     frameborder="0" 
                                     scrolling="no">
                             </iframe>
                         </div>
                         <div class="land-info">
                             <div class="land-title">Train</div>
-                            <a href="https://color-by-number.site/pdf/train.pdf" class="download-btn" download>Download PDF</a>
+                            <a href="https://color-by-number.site/pdf/train2.pdf" class="download-btn" download>Download PDF</a>
                         </div>
                     </div>
                     <div class="land-card">
                         <div class="land-preview-container">
                             <iframe class="pdf-embed" 
-                                    src="https://color-by-number.site/pdf/steamtrain.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
+                                    src="https://color-by-number.site/pdf/bullettrain.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
                                     frameborder="0" 
                                     scrolling="no">
                             </iframe>
                         </div>
                         <div class="land-info">
-                            <div class="land-title">Steam Train</div>
-                            <a href="https://color-by-number.site/pdf/steamtrain.pdf" class="download-btn" download>Download PDF</a>
+                            <div class="land-title">Bullet Train</div>
+                            <a href="https://color-by-number.site/pdf/bullettrain.pdf" class="download-btn" download>Download PDF</a>
                         </div>
                     </div>
                     <div class="land-card">
@@ -369,27 +407,14 @@
                     <div class="land-card">
                         <div class="land-preview-container">
                             <iframe class="pdf-embed" 
-                                    src="https://color-by-number.site/pdf/racingcar.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
+                                    src="https://color-by-number.site/pdf/taxi2.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
                                     frameborder="0" 
                                     scrolling="no">
                             </iframe>
                         </div>
                         <div class="land-info">
-                            <div class="land-title">Racing Car</div>
-                            <a href="https://color-by-number.site/pdf/racingcar.pdf" class="download-btn" download>Download PDF</a>
-                        </div>
-                    </div>
-                    <div class="land-card">
-                        <div class="land-preview-container">
-                            <iframe class="pdf-embed" 
-                                    src="https://color-by-number.site/pdf/policecar.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
-                                    frameborder="0" 
-                                    scrolling="no">
-                            </iframe>
-                        </div>
-                        <div class="land-info">
-                            <div class="land-title">Police Car</div>
-                            <a href="https://color-by-number.site/pdf/policecar.pdf" class="download-btn" download>Download PDF</a>
+                            <div class="land-title">City Taxi</div>
+                            <a href="https://color-by-number.site/pdf/taxi2.pdf" class="download-btn" download>Download PDF</a>
                         </div>
                     </div>
                 </div>

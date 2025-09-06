@@ -15,7 +15,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #fafafa;
+            background-color: #ffffff;
             color: #1a1a1a;
             line-height: 1.6;
         }
@@ -156,6 +156,32 @@
             background: white;
             transform: scale(1.05);
             transform-origin: center center;
+            margin: 0;
+            padding: 0;
+            display: block;
+            overflow: hidden;
+        }
+
+        /* Browser-specific fixes for PDF rendering */
+        .sport-preview-container {
+            overflow: hidden;
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        @supports (-webkit-appearance: none) {
+            .pdf-embed {
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+        }
+
+        @supports (-ms-ime-align: auto) {
+            .pdf-embed {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
         }
 
         .sport-info {
@@ -242,12 +268,11 @@
 
                 <div class="sports-grid">
                     <div class="sport-card" onclick="window.location.href='sports/sports-equipment.html'">
-                        <div class="sport-preview-container">
-                            <iframe class="pdf-embed" 
-                                    src="https://color-by-number.site/pdf/rugby.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
-                                    frameborder="0" 
-                                    scrolling="no">
-                            </iframe>
+                        <div class="sport-preview-container" style="display: flex; align-items: center; justify-content: center; background: white;">
+                            <img class="pdf-embed" 
+                                 src="https://color-by-number.site/pdf/rugby.png" 
+                                 alt="Sports Equipment Coloring Page"
+                                 style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                         <div class="sport-info">
                             <div class="sport-title">🏈 Sports Equipment</div>
@@ -257,12 +282,11 @@
                         </div>
                     </div>
                     <div class="sport-card" onclick="window.location.href='sports/activities.html'">
-                        <div class="sport-preview-container">
-                            <iframe class="pdf-embed" 
-                                    src="https://color-by-number.site/pdf/iceskating.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
-                                    frameborder="0" 
-                                    scrolling="no">
-                            </iframe>
+                        <div class="sport-preview-container" style="display: flex; align-items: center; justify-content: center; background: white;">
+                            <img class="pdf-embed" 
+                                 src="https://color-by-number.site/pdf/iceskating.png" 
+                                 alt="Activities Coloring Page"
+                                 style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                         <div class="sport-info">
                             <div class="sport-title">🏃 Activities</div>
@@ -272,12 +296,11 @@
                         </div>
                     </div>
                     <div class="sport-card" onclick="window.location.href='sports/toys.html'">
-                        <div class="sport-preview-container">
-                            <iframe class="pdf-embed" 
-                                    src="https://color-by-number.site/pdf/buildingblocks.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
-                                    frameborder="0" 
-                                    scrolling="no">
-                            </iframe>
+                        <div class="sport-preview-container" style="display: flex; align-items: center; justify-content: center; background: white;">
+                            <img class="pdf-embed" 
+                                 src="https://color-by-number.site/pdf/buildingblocks.png" 
+                                 alt="Toys Coloring Page"
+                                 style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                         <div class="sport-info">
                             <div class="sport-title">🧸 Toys & Accessories</div>

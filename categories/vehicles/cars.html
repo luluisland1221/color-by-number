@@ -156,13 +156,38 @@
             background: white;
             transform: scale(1.05);
             transform-origin: center center;
+            margin: 0;
+            padding: 0;
+            display: block;
+            overflow: hidden;
         }
 
-.vehicle-card:nth-child(3) .vehicle-preview-container {
+        .vehicle-preview-container {
+            overflow: hidden;
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .vehicle-card:nth-child(3) .vehicle-preview-container {
             display: flex;
             align-items: center;
             justify-content: center;
             background: white;
+        }
+
+        @supports (-webkit-appearance: none) {
+            .pdf-embed {
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+        }
+
+        @supports (-ms-ime-align: auto) {
+            .pdf-embed {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
         }
 
         
@@ -250,12 +275,11 @@
 
                 <div class="vehicles-grid">
                     <div class="vehicle-card">
-                        <div class="vehicle-preview-container">
-                            <iframe class="pdf-embed" 
-                                    src="https://color-by-number.site/pdf/car2.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
-                                    frameborder="0" 
-                                    scrolling="no">
-                            </iframe>
+                        <div class="vehicle-preview-container" style="display: flex; align-items: center; justify-content: center; background: white;">
+                            <img class="pdf-embed" 
+                                 src="https://color-by-number.site/pdf/car2.png" 
+                                 alt="Regular Car Coloring Page"
+                                 style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                         <div class="vehicle-info">
                             <div class="vehicle-title">Regular Car</div>
@@ -263,12 +287,11 @@
                         </div>
                     </div>
                     <div class="vehicle-card">
-                        <div class="vehicle-preview-container">
-                            <iframe class="pdf-embed" 
-                                    src="https://color-by-number.site/pdf/car3.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
-                                    frameborder="0" 
-                                    scrolling="no">
-                            </iframe>
+                        <div class="vehicle-preview-container" style="display: flex; align-items: center; justify-content: center; background: white;">
+                            <img class="pdf-embed" 
+                                 src="https://color-by-number.site/pdf/car3.png" 
+                                 alt="Cool Car Coloring Page"
+                                 style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                         <div class="vehicle-info">
                             <div class="vehicle-title">Cool Car</div>
@@ -276,12 +299,11 @@
                         </div>
                     </div>
                     <div class="vehicle-card">
-                        <div class="vehicle-preview-container">
-                            <iframe class="pdf-embed" 
-                                    src="https://color-by-number.site/pdf/sportscar.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
-                                    frameborder="0" 
-                                    scrolling="no">
-                            </iframe>
+                        <div class="vehicle-preview-container" style="display: flex; align-items: center; justify-content: center; background: white;">
+                            <img class="pdf-embed" 
+                                 src="https://color-by-number.site/pdf/sportscar.png" 
+                                 alt="Sports Car Coloring Page"
+                                 style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                         <div class="vehicle-info">
                             <div class="vehicle-title">Sports Car</div>
