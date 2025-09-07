@@ -6,6 +6,7 @@
     <meta name="description" content="2 free taxi coloring pages - yellow taxi and taxi 2">
     <title>Taxi Coloring Pages - 2 Free PDF Downloads</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -64,6 +65,45 @@
 
         .nav-menu a:hover {
             color: #2563eb;
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .back-button:hover {
+            background: #2563eb;
+            border-color: #2563eb;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .back-button:active {
+            transform: translateY(0);
+        }
+
+        .back-button .icon {
+            font-size: 0.9rem;
+            transition: transform 0.2s ease;
+        }
+
+        .back-button:hover .icon {
+            transform: translateX(-2px);
         }
 
         /* Hero */
@@ -204,7 +244,7 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="../../index.html">Home</a></li>
-                    <li><a href="../vehicles.html">Back to Vehicles</a></li>
+                    <li><a href="../vehicles.html" class="back-button"><i class="icon fas fa-arrow-left"></i> Back to Vehicles</a></li>
                 </ul>
             </div>
         </nav>

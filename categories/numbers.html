@@ -6,7 +6,34 @@
     <meta name="description" content="81 free color by number worksheets - includes 6-page, 11-page, 20-page, 52-page, 59-page series">
     <title>Color by Number Worksheets - 81 Free PDF Downloads</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Back Button Styles */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: background-color 0.2s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .back-button:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+            color: white;
+        }
+
+        .back-button i {
+            font-size: 1rem;
+        }
         .numbers-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -42,7 +69,7 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="../index.html#categories">Categories</a></li>
+                    <li><a href="../index.html#categories" class="back-button"><i class="fas fa-arrow-left"></i> Back to Categories</a></li>
                 </ul>
             </div>
         </nav>

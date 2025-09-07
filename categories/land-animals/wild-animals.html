@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P37QREG40L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P37QREG40L');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="8 free wild animal color by number printables - bears, lions, giraffes, elephants and more">
     <title>Wild Animals Coloring Pages - 4 Free PDF Downloads</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -66,6 +76,67 @@
             color: #2563eb;
         }
 
+        .back-button:hover {
+            color: white !important;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            color: #374151;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid #d1d5db;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white !important;
+            border-color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .back-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .back-button .icon {
+            font-size: 1.1rem;
+            font-weight: 900;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .back-button:hover .icon {
+            transform: translateX(-3px);
+        }
+
+        .back-button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .back-button:hover::after {
+            left: 100%;
+        }
+
         /* Hero */
         .hero {
             background: linear-gradient(135deg, #059669 0%, #047857 100%);
@@ -121,6 +192,7 @@
         }
 
         .animal-card {
+            cursor: pointer;
             background: white;
             border-radius: 0.75rem;
             overflow: hidden;
@@ -223,7 +295,7 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="../../index.html">Home</a></li>
-                    <li><a href="../land-animals.html">Back to Land Animals</a></li>
+                    <li><a href="../land-animals.html" class="back-button"><i class="icon fas fa-arrow-left"></i> Back to Land Animals</a></li>
                 </ul>
             </div>
         </nav>
@@ -247,7 +319,7 @@
                 </div>
 
                 <div class="animals-grid">
-                    <div class="animal-card">
+                    <div class="animal-card" onclick="window.location.href='https://color-by-number.site/pdf/bear.pdf'">
                         <div class="animal-preview-container" style="display: flex; align-items: center; justify-content: center; background: white;">
                             <img class="pdf-embed" 
                                  src="https://color-by-number.site/pdf/bear.png" 
@@ -256,13 +328,13 @@
                         </div>
                         <div class="animal-info">
                             <div class="animal-title">🐻 Bear</div>
-                            <a href="https://color-by-number.site/pdf/bear.pdf" class="download-btn" download="bear-coloring-page.pdf">
+                            <a href="https://color-by-number.site/pdf/bear.pdf" class="download-btn" download="bear-coloring-page.pdf" onclick="event.stopPropagation();">
                                 Download PDF
                             </a>
                         </div>
                     </div>
                     
-                    <div class="animal-card">
+                    <div class="animal-card" onclick="window.location.href='https://color-by-number.site/pdf/bear2.pdf'">
                         <div class="animal-preview-container" style="display: flex; align-items: center; justify-content: center; background: white;">
                             <img class="pdf-embed" 
                                  src="https://color-by-number.site/pdf/bear2.png" 
@@ -271,13 +343,13 @@
                         </div>
                         <div class="animal-info">
                             <div class="animal-title">🐻 Bear 2</div>
-                            <a href="https://color-by-number.site/pdf/bear2.pdf" class="download-btn" download="bear2-coloring-page.pdf">
+                            <a href="https://color-by-number.site/pdf/bear2.pdf" class="download-btn" download="bear2-coloring-page.pdf" onclick="event.stopPropagation();">
                                 Download PDF
                             </a>
                         </div>
                     </div>
                     
-                    <div class="animal-card">
+                    <div class="animal-card" onclick="window.location.href='https://color-by-number.site/pdf/bear3.pdf'">
                         <div class="animal-preview-container" style="display: flex; align-items: center; justify-content: center; background: white;">
                             <img class="pdf-embed" 
                                  src="https://color-by-number.site/pdf/bear3.png" 
@@ -286,13 +358,13 @@
                         </div>
                         <div class="animal-info">
                             <div class="animal-title">🐻 Bear 3</div>
-                            <a href="https://color-by-number.site/pdf/bear3.pdf" class="download-btn" download="bear3-coloring-page.pdf">
+                            <a href="https://color-by-number.site/pdf/bear3.pdf" class="download-btn" download="bear3-coloring-page.pdf" onclick="event.stopPropagation();">
                                 Download PDF
                             </a>
                         </div>
                     </div>
                     
-                    <div class="animal-card">
+                    <div class="animal-card" onclick="window.location.href='https://color-by-number.site/pdf/bear4.pdf'">
                         <div class="animal-preview-container" style="display: flex; align-items: center; justify-content: center; background: white;">
                             <img class="pdf-embed" 
                                  src="https://color-by-number.site/pdf/bear4.png" 
@@ -301,13 +373,13 @@
                         </div>
                         <div class="animal-info">
                             <div class="animal-title">🐻 Bear 4</div>
-                            <a href="https://color-by-number.site/pdf/bear4.pdf" class="download-btn" download="bear4-coloring-page.pdf">
+                            <a href="https://color-by-number.site/pdf/bear4.pdf" class="download-btn" download="bear4-coloring-page.pdf" onclick="event.stopPropagation();">
                                 Download PDF
                             </a>
                         </div>
                     </div>
                     
-                    <div class="animal-card">
+                    <div class="animal-card" onclick="window.location.href='https://color-by-number.site/pdf/bear5.pdf'">
                         <div class="animal-preview-container" style="display: flex; align-items: center; justify-content: center; background: white;">
                             <img class="pdf-embed" 
                                  src="https://color-by-number.site/pdf/bear5.png" 
@@ -316,13 +388,13 @@
                         </div>
                         <div class="animal-info">
                             <div class="animal-title">🐻 Bear 5</div>
-                            <a href="https://color-by-number.site/pdf/bear5.pdf" class="download-btn" download="bear5-coloring-page.pdf">
+                            <a href="https://color-by-number.site/pdf/bear5.pdf" class="download-btn" download="bear5-coloring-page.pdf" onclick="event.stopPropagation();">
                                 Download PDF
                             </a>
                         </div>
                     </div>
                     
-                    <div class="animal-card">
+                    <div class="animal-card" onclick="window.location.href='https://color-by-number.site/pdf/lion.pdf'">
                         <div class="animal-preview-container" style="display: flex; align-items: center; justify-content: center; background: white;">
                             <img class="pdf-embed" 
                                  src="https://color-by-number.site/pdf/lion.png" 
@@ -331,13 +403,13 @@
                         </div>
                         <div class="animal-info">
                             <div class="animal-title">🦁 Lion</div>
-                            <a href="https://color-by-number.site/pdf/lion.pdf" class="download-btn" download="lion-coloring-page.pdf">
+                            <a href="https://color-by-number.site/pdf/lion.pdf" class="download-btn" download="lion-coloring-page.pdf" onclick="event.stopPropagation();">
                                 Download PDF
                             </a>
                         </div>
                     </div>
                     
-                    <div class="animal-card">
+                    <div class="animal-card" onclick="window.location.href='https://color-by-number.site/pdf/giraffe.pdf'">
                         <div class="animal-preview-container" style="display: flex; align-items: center; justify-content: center; background: white;">
                             <img class="pdf-embed" 
                                  src="https://color-by-number.site/pdf/giraffe.png" 
@@ -346,13 +418,13 @@
                         </div>
                         <div class="animal-info">
                             <div class="animal-title">🦒 Giraffe</div>
-                            <a href="https://color-by-number.site/pdf/giraffe.pdf" class="download-btn" download="giraffe-coloring-page.pdf">
+                            <a href="https://color-by-number.site/pdf/giraffe.pdf" class="download-btn" download="giraffe-coloring-page.pdf" onclick="event.stopPropagation();">
                                 Download PDF
                             </a>
                         </div>
                     </div>
                     
-                    <div class="animal-card">
+                    <div class="animal-card" onclick="window.location.href='https://color-by-number.site/pdf/elephant.pdf'">
                         <div class="animal-preview-container" style="display: flex; align-items: center; justify-content: center; background: white;">
                             <img class="pdf-embed" 
                                  src="https://color-by-number.site/pdf/elephant.png" 
@@ -361,7 +433,7 @@
                         </div>
                         <div class="animal-info">
                             <div class="animal-title">🐘 Elephant</div>
-                            <a href="https://color-by-number.site/pdf/elephant.pdf" class="download-btn" download="elephant-coloring-page.pdf">
+                            <a href="https://color-by-number.site/pdf/elephant.pdf" class="download-btn" download="elephant-coloring-page.pdf" onclick="event.stopPropagation();">
                                 Download PDF
                             </a>
                         </div>

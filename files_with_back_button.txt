@@ -1,0 +1,15 @@
+categories/birds/farm-birds.html
+categories/birds/general-birds.html
+categories/birds/owls.html
+categories/birds/parrots.html
+categories/birds/specialty-birds.html
+categories/birds/water-birds.html
+categories/birds.html
+categories/insects/bees.html
+categories/insects/butterflies.html
+categories/insects/other-bugs.html
+categories/land-animals/farm-animals.html
+categories/land-animals/wild-animals.html
+categories/ocean-animals/fish.html
+categories/ocean-animals/mammals.html
+categories/ocean-animals/sea-creatures.html

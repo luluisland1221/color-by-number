@@ -6,6 +6,7 @@
     <meta name="description" content="12 free insect color by number printables - butterflies, bees, ladybugs, and more amazing bugs">
     <title>Insects Coloring Pages - 12 Free PDF Downloads</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -64,6 +65,33 @@
 
         .nav-menu a:hover {
             color: #2563eb;
+        }
+
+        /* Back Button Styles */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: background-color 0.2s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .back-button:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+            color: white;
+        }
+
+        .back-button i {
+            font-size: 1rem;
         }
 
         /* Hero */
@@ -223,7 +251,7 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="../index.html#categories">Back to Categories</a></li>
+                    <li><a href="../index.html#categories" class="back-button"><i class="fas fa-arrow-left"></i> Back to Categories</a></li>
                 </ul>
             </div>
         </nav>
