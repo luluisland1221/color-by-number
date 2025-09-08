@@ -72,26 +72,51 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            color: #374151;
             padding: 0.75rem 1.5rem;
-            background: #2563eb;
-            color: white;
+            border-radius: 0.75rem;
+            font-weight: 600;
             text-decoration: none;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            transition: background-color 0.2s, transform 0.2s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #d1d5db;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
         }
-
         .back-button:hover {
-            background: #1d4ed8;
-            transform: translateY(-1px);
-            color: white;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white !important;
+            border-color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
         }
-
+        .back-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
         .back-button i {
-            font-size: 1rem;
+            font-size: 1.1rem;
+            font-weight: 900;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+        .back-button:hover i {
+            transform: translateX(-3px);
+        }
+        .back-button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+        .back-button:hover::after {
+            left: 100%;
         }
 
         /* Hero */
@@ -247,11 +272,11 @@
         <nav class="nav">
             <div class="container">
                 <div class="nav-brand">
-                    <h1>🐛 ColorByNumbers.fun</h1>
+                    <h1>🐛 color-by-number.site</h1>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="../index.html#categories" class="back-button"><i class="fas fa-arrow-left"></i> Back to Categories</a></li>
+                    <li><a href="../index.html#categories" class="back-button"><i class="fas fa-arrow-left icon"></i> Back to Categories</a></li>
                 </ul>
             </div>
         </nav>
@@ -261,8 +286,8 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h2>🐛 Insects Collection</h2>
-                    <p>12 fascinating insect coloring pages featuring beautiful butterflies, busy bees, and other amazing bugs.</p>
+                    <h2>🐛 Free Insect Color by Number Printable Collection</h2>
+                    <p>Explore our fascinating color by number printable insect collection! These 12 free color by number worksheets include beautiful butterflies, busy bees, and other amazing bugs. Perfect for kids who love nature, our printable color by number PDF pages help develop color recognition while learning about insects.</p>
                 </div>
             </div>
         </section>
@@ -270,8 +295,8 @@
         <section class="main-content">
             <div class="container">
                 <div class="category-header">
-                    <h1 class="category-title">Insects Coloring Pages</h1>
-                    <p class="category-description">Discover 12 amazing insect coloring pages including colorful butterflies, busy bees, and fascinating bugs.</p>
+                    <h1 class="category-title">Insect Color by Number Printable Pages</h1>
+                    <p class="category-description">Get creative with our free color by number printable insect collection! These color by number pages feature 12 exciting insect themes including colorful butterflies, busy bees, and fascinating bugs. Perfect for kids who love nature, our printable color by number worksheets help develop color recognition and number skills while learning about insects. Each color by number printable PDF is designed for ages 4-12 and provides hours of educational fun. Download these free color by number online resources and start coloring today!</p>
                 </div>
 
                 <div class="animals-grid">
