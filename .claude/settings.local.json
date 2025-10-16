@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(python:*)",
+      "Bash(while read file)",
+      "Bash(do if ! grep -q 'rel=\"\"\"\"canonical\"\"\"\"' \"$file\")",
+      "Bash(then echo \"$file\")",
+      "Bash(fi:*)",
+      "Bash(done:*)",
+      "Bash(dir:*)",
+      "Read(//g/**)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
