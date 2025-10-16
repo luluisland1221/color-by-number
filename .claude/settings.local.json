@@ -10,7 +10,9 @@
       "Bash(done:*)",
       "Bash(dir:*)",
       "Read(//g/**)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
