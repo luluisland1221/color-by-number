@@ -59,14 +59,41 @@
             Your feedback helps us create better educational resources for kids everywhere.
         </p>
 
-        <p style="font-size: 3rem; font-weight: 700; color: #667eea; margin-bottom: 1rem;">
-            <a href="mailto:hello@color-by-number.site"
-               style="color: #667eea; text-decoration: none; transition: none;">
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 3rem; border-radius: 20px; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1); position: relative; overflow: hidden;">
+            <div style="position: absolute; top: -50%; right: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);"></div>
+            <p style="font-size: 2.5rem; font-weight: 700; color: white; margin-bottom: 0.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 1; cursor: default; user-select: all;"
+               onclick="this.select(); document.execCommand('copy');
+                        const notification = document.createElement('div');
+                        notification.textContent = 'Email copied to clipboard!';
+                        notification.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #10b981; color: white; padding: 1rem 1.5rem; border-radius: 8px; z-index: 10000;';
+                        document.body.appendChild(notification);
+                        setTimeout(() => notification.remove(), 2000);">
                 hello@color-by-number.site
-            </a>
-        </p>
+            </p>
+            <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); margin: 0; position: relative; z-index: 1;">
+                📧 Click to copy this email address
+            </p>
+        </div>
 
-        <p style="font-size: 1.2rem; color: #666;">We respond within 24-48 hours on weekdays</p>
+        <p style="font-size: 1.2rem; color: #666; margin-bottom: 3rem;">We respond within 24-48 hours on weekdays</p>
+
+        <div style="background: #f8f9fa; padding: 2rem; border-radius: 15px; border-left: 4px solid #667eea;">
+            <h3 style="color: #333; margin-bottom: 1rem;">💬 What can we help you with?</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: left;">
+                <div style="color: #666; font-size: 0.95rem;">
+                    <strong>📥 Download Issues:</strong> Problems with PDF files or printing
+                </div>
+                <div style="color: #666; font-size: 0.95rem;">
+                    <strong>🎨 Content Requests:</strong> Specific themes or animals you'd like to see
+                </div>
+                <div style="color: #666; font-size: 0.95rem;">
+                    <strong>💡 Suggestions:</strong> Ideas to improve our website and resources
+                </div>
+                <div style="color: #666; font-size: 0.95rem;">
+                    <strong>👨‍🏫 Teacher Help:</strong> Classroom or educational needs
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="footer">
