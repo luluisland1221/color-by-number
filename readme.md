@@ -146,8 +146,8 @@ color-by-number-fun/
 - **Cloudflare Pages**: Fast global CDN with custom domains
 
 ### Domain Configuration
-- **Primary Domain**: colorbynumberfun.com
-- **Subdomains**: www.colorbynumberfun.com
+- **Primary Domain**: color-by-number.site
+- **Subdomains**: www.color-by-number.site
 - **CDN**: Use Cloudflare for global performance
 
 ## Future Enhancements
@@ -223,7 +223,7 @@ All coloring pages and website content are provided under Creative Commons Attri
 ## Support
 
 For questions, issues, or suggestions:
-- **Email**: hello@colorbynumberfun.com
+- **Email**: hello@color-by-number.site
 - **Issues**: Create an issue on GitHub
 - **Contact Form**: Use the contact page on the website
 
