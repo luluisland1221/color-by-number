@@ -16,7 +16,10 @@
       "Bash(cat:*)",
       "Bash(xmllint:*)",
       "Bash(do echo:*)",
-      "Bash(for:*)"
+      "Bash(for:*)",
+      "Bash(do if [ -f \"$file\" ])",
+      "Bash(then echo \"=== $file internal links ===\")",
+      "Bash(else echo \"$file not found\")"
     ],
     "deny": [],
     "ask": []
