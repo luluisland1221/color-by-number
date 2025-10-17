@@ -41,6 +41,12 @@ body {
     color: white;
 }
 
+.nav-brand .brand-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
