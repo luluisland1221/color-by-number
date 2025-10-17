@@ -141,6 +141,47 @@
 
     <script src="../assets/js/main.js"></script>
     <script>
+        // Notification function
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 1rem 1.5rem;
+                background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
+                color: white;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                z-index: 10000;
+                max-width: 400px;
+                animation: slideIn 0.3s ease;
+            `;
+            notification.textContent = message;
+
+            // Add animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+
+            document.body.appendChild(notification);
+
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideIn 0.3s ease reverse';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 5000);
+        }
+
         // Contact form handling
         document.querySelector('.contact-form').addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -154,14 +195,26 @@
             button.disabled = true;
             
             try {
-                // Simulate form submission
-                await new Promise(resolve => setTimeout(resolve, 2000));
-                
-                showNotification('Thank you! Your message has been sent successfully.', 'success');
-                form.reset();
-                
+                // Create email content
+                const name = formData.get('name');
+                const email = formData.get('email');
+                const subject = formData.get('subject');
+                const message = formData.get('message');
+
+                const emailSubject = `${subject} - ${name}`;
+                const emailBody = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+
+                // Open email client
+                const mailtoLink = `mailto:hello@color-by-number.site?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+                window.location.href = mailtoLink;
+
+                // Wait a moment for email client to open
+                await new Promise(resolve => setTimeout(resolve, 500));
+
+                showNotification('Opening your email client... If nothing happens, please email us directly at hello@color-by-number.site', 'info');
+
             } catch (error) {
-                showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
+                showNotification('Please email us directly at hello@color-by-number.site', 'error');
             } finally {
                 button.textContent = originalText;
                 button.disabled = false;
