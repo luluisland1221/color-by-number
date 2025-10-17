@@ -495,7 +495,7 @@ All vehicle subcategory pages have been completed:
 
 #### 7. Apple Viewer Page (`categories/food/apple-viewer.html`)
 **Changes Made:**
-- **Page Title:** Changed from "Apple Coloring Page - Download & Print | ColorByNumbers.fun" to "Apple Color by Number Printable - Free PDF Download"
+- **Page Title:** Changed from "Apple Coloring Page - Download & Print | color-by-number.site" to "Apple Color by Number Printable - Free PDF Download"
 - **Meta Description:** Updated with "apple color by number printable" and fruit coloring focus
 - **H1 Title:** Changed from "Apple Coloring Page" to "Apple Color by Number Printable Page"
 - **Content:** Optimized with apple-specific keywords:

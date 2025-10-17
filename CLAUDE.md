@@ -1,4 +1,4 @@
-# Development Guidelines for ColorByNumbers.fun
+# Development Guidelines for color-by-number.site
 
 ## Language Policy
 **STRICTLY ENGLISH ONLY** - This website is designed for English-speaking users. All user-facing content must be in English.
