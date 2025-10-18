@@ -44,6 +44,26 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog Section -->
+  <url>
+    <loc>https://color-by-number.site/blog/</loc>
+    <lastmod>2025-10-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://color-by-number.site/blog/how-color-by-number-boosts-child-development.html</loc>
+    <lastmod>2025-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://color-by-number.site/blog/the-science-behind-color-by-number-learning.html</loc>
+    <lastmod>2025-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Main Category Pages -->
   <url>
     <loc>https://color-by-number.site/categories/birds.html</loc>
