@@ -1,27 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(find:*)",
-      "Bash(python:*)",
-      "Bash(while read file)",
-      "Bash(do if ! grep -q 'rel=\"\"\"\"canonical\"\"\"\"' \"$file\")",
-      "Bash(then echo \"$file\")",
-      "Bash(fi:*)",
-      "Bash(done:*)",
-      "Bash(dir:*)",
-      "Read(//g/**)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git push:*)",
-      "Bash(cat:*)",
-      "Bash(xmllint:*)",
-      "Bash(do echo:*)",
-      "Bash(for:*)",
-      "Bash(do if [ -f \"$file\" ])",
-      "Bash(then echo \"=== $file internal links ===\")",
-      "Bash(else echo \"$file not found\")",
-      "Bash(awk:*)",
-      "Bash(node:*)"
+      "Read(//g//**)"
     ],
     "deny": [],
     "ask": []
