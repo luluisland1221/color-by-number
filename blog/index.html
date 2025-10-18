@@ -446,52 +446,7 @@
             border-color: #2563eb;
         }
 
-        /* Newsletter Section */
-        .newsletter-section {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            color: white;
-            padding: 3rem 2rem;
-            border-radius: 1rem;
-            text-align: center;
-            margin: 3rem 0;
-        }
-
-        .newsletter-section h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 1rem;
-            max-width: 500px;
-            margin: 2rem auto 0;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 0.75rem 1rem;
-            border: none;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-        }
-
-        .newsletter-button {
-            background: #f59e0b;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-
-        .newsletter-button:hover {
-            transform: translateY(-2px);
-        }
-
+  
         /* Footer */
         .footer {
             background: #1f2937;
@@ -527,10 +482,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .newsletter-form {
-                flex-direction: column;
-            }
-
+    
             .categories-grid {
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             }
@@ -770,16 +722,7 @@
                 </div>
             </section>
 
-            <!-- Newsletter Section -->
-            <section class="newsletter-section">
-                <h2>Stay Updated with Educational Insights</h2>
-                <p>Get weekly tips and research-backed advice on using color by number printables for child development.</p>
-                <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
-                    <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
-                    <button type="submit" class="newsletter-button">Subscribe</button>
-                </form>
-            </section>
-        </div>
+          </div>
     </main>
 
     <footer class="footer">
@@ -803,14 +746,7 @@
             alert(`Searching for: ${searchTerm}\n\nSearch functionality will be available when more articles are published.`);
         }
 
-        // Newsletter subscription
-        function subscribeNewsletter(event) {
-            event.preventDefault();
-            const email = event.target.querySelector('.newsletter-input').value;
-            alert(`Thank you for subscribing with email: ${email}\n\nYou'll receive weekly educational insights and tips!`);
-            event.target.reset();
-        }
-
+  
         // Search on Enter key
         document.getElementById('searchInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
