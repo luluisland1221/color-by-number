@@ -19,7 +19,9 @@
       "Bash(for:*)",
       "Bash(do if [ -f \"$file\" ])",
       "Bash(then echo \"=== $file internal links ===\")",
-      "Bash(else echo \"$file not found\")"
+      "Bash(else echo \"$file not found\")",
+      "Bash(awk:*)",
+      "Bash(node:*)"
     ],
     "deny": [],
     "ask": []
