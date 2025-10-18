@@ -7,7 +7,12 @@
       "Bash(cmd:*)",
       "Bash(powershell:*)",
       "Bash(bash add_adsense.sh:*)",
-      "Bash(./process_adsense.bat:*)"
+      "Bash(./process_adsense.bat:*)",
+      "Read(//g/ai编程/100个网站/05 填色卡网站/关键词优化/**)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(node:*)"
     ],
     "deny": [],
     "ask": []
