@@ -116,9 +116,106 @@
             margin: 0 auto;
         }
 
+        /* Search Bar */
+        .search-section {
+            background: white;
+            padding: 2rem 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 2rem;
+            font-size: 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .search-button {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #2563eb;
+            border: none;
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .search-button:hover {
+            background: #1d4ed8;
+        }
+
         /* Main Content */
         .main-content {
             padding: 3rem 0;
+        }
+
+        /* Featured Article */
+        .featured-article {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            margin-bottom: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 400px;
+            transition: transform 0.3s ease;
+        }
+
+        .featured-article:hover {
+            transform: translateY(-4px);
+        }
+
+        .featured-image {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .featured-excerpt {
+            color: #6b7280;
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
         }
 
         /* Blog Grid */
@@ -133,14 +230,16 @@
             background: white;
             border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
         }
 
         .blog-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
         }
 
         .blog-image {
@@ -162,6 +261,9 @@
 
         .blog-content {
             padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .blog-category {
@@ -181,6 +283,7 @@
             color: #1f2937;
             margin-bottom: 0.75rem;
             line-height: 1.4;
+            flex: 1;
         }
 
         .blog-excerpt {
@@ -196,6 +299,9 @@
             align-items: center;
             font-size: 0.875rem;
             color: #9ca3af;
+            border-top: 1px solid #f3f4f6;
+            padding-top: 1rem;
+            margin-top: auto;
         }
 
         .blog-meta span {
@@ -218,38 +324,126 @@
             gap: 0.75rem;
         }
 
+        /* CTA Button */
+        .cta-button {
+            background: #2563eb;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+        }
+
         /* Categories Section */
         .categories-section {
             background: white;
             border-radius: 1rem;
-            padding: 2rem;
+            padding: 2.5rem;
             margin: 3rem 0;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .categories-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .categories-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .categories-header p {
+            color: #6b7280;
+            font-size: 1.125rem;
         }
 
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
-            margin-top: 1.5rem;
         }
 
-        .category-tag {
-            background: #f3f4f6;
-            color: #374151;
-            padding: 0.75rem 1rem;
-            border-radius: 0.5rem;
+        .category-card {
+            background: #f8fafc;
+            border: 2px solid transparent;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
             text-align: center;
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
         }
 
-        .category-tag:hover {
+        .category-card:hover {
             background: #2563eb;
             color: white;
-            transform: translateY(-2px);
+            border-color: #2563eb;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            color: inherit;
+        }
+
+        .category-name {
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        .category-count {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 3rem 0;
+        }
+
+        .pagination a {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            color: #374151;
+            transition: all 0.2s ease;
+        }
+
+        .pagination a:hover {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+
+        .pagination .active {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
         }
 
         /* Newsletter Section */
@@ -313,6 +507,22 @@
                 font-size: 2rem;
             }
 
+            .blog-hero p {
+                font-size: 1.125rem;
+            }
+
+            .featured-article {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-content {
+                padding: 2rem;
+            }
+
+            .featured-title {
+                font-size: 1.5rem;
+            }
+
             .blog-grid {
                 grid-template-columns: 1fr;
             }
@@ -324,6 +534,20 @@
             .categories-grid {
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             }
+        }
+
+        /* Coming Soon Badge */
+        .coming-soon {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #f59e0b;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 10;
         }
     </style>
 </head>
@@ -352,6 +576,17 @@
         </div>
     </section>
 
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search articles, topics, or keywords..." id="searchInput">
+                <button class="search-button" onclick="performSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
     <main class="main-content">
         <div class="container">
             <a href="/" class="back-button">
@@ -360,54 +595,61 @@
             </a>
 
             <!-- Featured Article -->
-            <div class="blog-card" style="margin-bottom: 2rem;">
-                <div class="blog-image">
-                    <i class="fas fa-graduation-cap" style="font-size: 3rem; color: white;"></i>
+            <div class="featured-article" onclick="window.location.href='how-color-by-number-boosts-child-development.html'">
+                <div class="featured-image">
+                    <img src="https://color-by-number.site/pdf/color-by-number-cognitive-development.jpg" alt="Child engaged in color by number cognitive development activities">
                 </div>
-                <div class="blog-content">
-                    <span class="blog-category">Featured</span>
-                    <h2 class="blog-title">How Color by Number Printables Boost Child Development</h2>
-                    <p class="blog-excerpt">Discover the science-backed benefits of printable color by number activities for cognitive growth, fine motor skills, and educational success in children.</p>
+                <div class="featured-content">
+                    <span class="blog-category">Featured Article</span>
+                    <h1 class="featured-title">How Color by Number Printables Boost Child Development</h1>
+                    <p class="featured-excerpt">Discover the science-backed benefits of printable color by number activities for cognitive growth, fine motor skills, and educational success. Research shows these structured activities can improve focus by up to 40%.</p>
                     <div class="blog-meta">
                         <span><i class="fas fa-calendar"></i> Oct 18, 2024</span>
                         <span><i class="fas fa-clock"></i> 8 min read</span>
+                        <span><i class="fas fa-eye"></i> 1.2k views</span>
                     </div>
-                    <div style="margin-top: 1rem;">
-                        <a href="how-color-by-number-boosts-child-development.html" class="read-more">
-                            Read Full Article <i class="fas fa-arrow-right"></i>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="how-color-by-number-boosts-child-development.html" class="cta-button" onclick="event.stopPropagation()">
+                            <i class="fas fa-book-open"></i> Read Full Article
                         </a>
                     </div>
                 </div>
             </div>
 
-            <h2 style="text-align: center; margin-bottom: 1rem; color: #1f2937;">Latest Articles</h2>
+            <h2 style="text-align: center; margin-bottom: 1rem; color: #1f2937; font-size: 2rem;">Latest Articles</h2>
 
             <!-- Blog Grid -->
             <div class="blog-grid">
-                <!-- Upcoming Articles Preview -->
-                <div class="blog-card" style="opacity: 0.7;">
+                <!-- Published Article 2 -->
+                <div class="blog-card" onclick="window.location.href='the-science-behind-color-by-number-learning.html'">
                     <div class="blog-image">
-                        <i class="fas fa-brain" style="font-size: 3rem; color: white;"></i>
+                        <img src="https://color-by-number.site/pdf/brain-research-color-by-number.jpg" alt="Brain imaging showing neural activation during color by number activities" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="blog-content">
-                        <span class="blog-category">Coming Soon</span>
+                        <span class="blog-category">Educational Research</span>
                         <h2 class="blog-title">The Science Behind Color by Number Learning</h2>
-                        <p class="blog-excerpt">Educational research on how structured coloring activities enhance cognitive development and learning outcomes.</p>
+                        <p class="blog-excerpt">Explore the cognitive science behind color by number printables. Research-backed insights on how these activities enhance brain development and academic performance.</p>
                         <div class="blog-meta">
                             <span><i class="fas fa-calendar"></i> Oct 19, 2024</span>
                             <span><i class="fas fa-clock"></i> 6 min read</span>
                         </div>
+                        <div style="margin-top: 1rem;">
+                            <a href="the-science-behind-color-by-number-learning.html" class="read-more" onclick="event.stopPropagation()">
+                                Read Article <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="blog-card" style="opacity: 0.7;">
-                    <div class="blog-image">
+                <div class="blog-card" style="opacity: 0.7; cursor: default;">
+                    <div class="blog-image" style="position: relative;">
                         <i class="fas fa-home" style="font-size: 3rem; color: white;"></i>
+                        <span class="coming-soon">Coming Soon</span>
                     </div>
                     <div class="blog-content">
-                        <span class="blog-category">Coming Soon</span>
+                        <span class="blog-category">Parenting Tips</span>
                         <h2 class="blog-title">Complete Guide to Using Color by Number at Home</h2>
-                        <p class="blog-excerpt">Practical tips and strategies for parents to maximize educational benefits from color by number activities.</p>
+                        <p class="blog-excerpt">Practical tips and strategies for parents to maximize educational benefits from color by number activities in home settings.</p>
                         <div class="blog-meta">
                             <span><i class="fas fa-calendar"></i> Oct 20, 2024</span>
                             <span><i class="fas fa-clock"></i> 7 min read</span>
@@ -415,32 +657,116 @@
                     </div>
                 </div>
 
-                <div class="blog-card" style="opacity: 0.7;">
-                    <div class="blog-image">
+                <div class="blog-card" style="opacity: 0.7; cursor: default;">
+                    <div class="blog-image" style="position: relative;">
                         <i class="fas fa-chalkboard-teacher" style="font-size: 3rem; color: white;"></i>
+                        <span class="coming-soon">Coming Soon</span>
                     </div>
                     <div class="blog-content">
-                        <span class="blog-category">Coming Soon</span>
+                        <span class="blog-category">Teacher Resources</span>
                         <h2 class="blog-title">Color by Number for Teachers: Classroom Strategies</h2>
-                        <p class="blog-excerpt">Professional development guide for integrating color by number activities into classroom curriculum.</p>
+                        <p class="blog-excerpt">Professional development guide for integrating color by number activities into classroom curriculum and lesson planning.</p>
                         <div class="blog-meta">
                             <span><i class="fas fa-calendar"></i> Oct 21, 2024</span>
                             <span><i class="fas fa-clock"></i> 8 min read</span>
                         </div>
                     </div>
                 </div>
+
+                <div class="blog-card" style="opacity: 0.7; cursor: default;">
+                    <div class="blog-image" style="position: relative;">
+                        <i class="fas fa-snowflake" style="font-size: 3rem; color: white;"></i>
+                        <span class="coming-soon">Coming Soon</span>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Seasonal Activities</span>
+                        <h2 class="blog-title">Holiday Color by Number: Seasonal Learning Fun</h2>
+                        <p class="blog-excerpt">Creative ways to incorporate seasonal themes into color by number activities for year-round educational engagement.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Oct 22, 2024</span>
+                            <span><i class="fas fa-clock"></i> 5 min read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-card" style="opacity: 0.7; cursor: default;">
+                    <div class="blog-image" style="position: relative;">
+                        <i class="fas fa-calculator" style="font-size: 3rem; color: white;"></i>
+                        <span class="coming-soon">Coming Soon</span>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Educational Activities</span>
+                        <h2 class="blog-title">Color by Number Math: Learning Numbers Through Art</h2>
+                        <p class="blog-excerpt">How to combine mathematical concepts with artistic activities to make learning numbers fun and engaging for children.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Oct 23, 2024</span>
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-card" style="opacity: 0.7; cursor: default;">
+                    <div class="blog-image" style="position: relative;">
+                        <i class="fas fa-puzzle-piece" style="font-size: 3rem; color: white;"></i>
+                        <span class="coming-soon">Coming Soon</span>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Advanced Learning</span>
+                        <h2 class="blog-title">Advanced Color by Number: Challenging Worksheets</h2>
+                        <p class="blog-excerpt">Complex color by number designs for older children and adults looking for more challenging artistic activities.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Oct 24, 2024</span>
+                            <span><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">Next →</a>
             </div>
 
             <!-- Categories Section -->
             <section class="categories-section">
-                <h2 style="text-align: center; color: #1f2937; margin-bottom: 1rem;">Browse by Topic</h2>
+                <div class="categories-header">
+                    <h2>Explore by Category</h2>
+                    <p>Browse articles organized by educational topics and interests</p>
+                </div>
                 <div class="categories-grid">
-                    <a href="#" class="category-tag">Child Development</a>
-                    <a href="#" class="category-tag">Educational Research</a>
-                    <a href="#" class="category-tag">Parenting Tips</a>
-                    <a href="#" class="category-tag">Teacher Resources</a>
-                    <a href="#" class="category-tag">Fine Motor Skills</a>
-                    <a href="#" class="category-tag">Cognitive Development</a>
+                    <a href="topics/child-development.html" class="category-card">
+                        <i class="fas fa-child category-icon"></i>
+                        <span class="category-name">Child Development</span>
+                        <span class="category-count">12 articles</span>
+                    </a>
+                    <a href="topics/educational-tips.html" class="category-card">
+                        <i class="fas fa-lightbulb category-icon"></i>
+                        <span class="category-name">Educational Tips</span>
+                        <span class="category-count">8 articles</span>
+                    </a>
+                    <a href="topics/seasonal-activities.html" class="category-card">
+                        <i class="fas fa-calendar-alt category-icon"></i>
+                        <span class="category-name">Seasonal Activities</span>
+                        <span class="category-count">15 articles</span>
+                    </a>
+                    <a href="topics/teacher-resources.html" class="category-card">
+                        <i class="fas fa-chalkboard-teacher category-icon"></i>
+                        <span class="category-name">Teacher Resources</span>
+                        <span class="category-count">6 articles</span>
+                    </a>
+                    <a href="topics/fine-motor-skills.html" class="category-card">
+                        <i class="fas fa-hand-paper category-icon"></i>
+                        <span class="category-name">Fine Motor Skills</span>
+                        <span class="category-count">5 articles</span>
+                    </a>
+                    <a href="topics/cognitive-development.html" class="category-card">
+                        <i class="fas fa-brain category-icon"></i>
+                        <span class="category-name">Cognitive Development</span>
+                        <span class="category-count">9 articles</span>
+                    </a>
                 </div>
             </section>
 
@@ -448,8 +774,8 @@
             <section class="newsletter-section">
                 <h2>Stay Updated with Educational Insights</h2>
                 <p>Get weekly tips and research-backed advice on using color by number printables for child development.</p>
-                <form class="newsletter-form">
-                    <input type="email" class="newsletter-input" placeholder="Enter your email address">
+                <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
                     <button type="submit" class="newsletter-button">Subscribe</button>
                 </form>
             </section>
@@ -466,6 +792,32 @@
     </footer>
 
     <script>
+        // Search functionality
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            if (searchTerm.trim() === '') {
+                alert('Please enter a search term');
+                return;
+            }
+            // In a real implementation, this would filter articles
+            alert(`Searching for: ${searchTerm}\n\nSearch functionality will be available when more articles are published.`);
+        }
+
+        // Newsletter subscription
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('.newsletter-input').value;
+            alert(`Thank you for subscribing with email: ${email}\n\nYou'll receive weekly educational insights and tips!`);
+            event.target.reset();
+        }
+
+        // Search on Enter key
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -495,7 +847,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.blog-card').forEach(card => {
+        document.querySelectorAll('.blog-card, .featured-article, .category-card').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
