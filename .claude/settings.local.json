@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Read(//g//**)"
+      "Read(//g//**)",
+      "Bash(python3:*)",
+      "Bash(/c/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python:*)",
+      "Bash(cmd:*)",
+      "Bash(powershell:*)",
+      "Bash(bash add_adsense.sh:*)",
+      "Bash(./process_adsense.bat:*)"
     ],
     "deny": [],
     "ask": []
