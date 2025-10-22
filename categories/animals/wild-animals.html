@@ -42,6 +42,16 @@
             line-height: 1.6;
         }
 
+        /* Hide any unwanted content above header */
+        body > :not(header):not(main):not(footer):first-child:not(nav):not(.container) {
+            display: none !important;
+        }
+
+        /* Ensure nothing appears above header */
+        body::before {
+            display: none !important;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;

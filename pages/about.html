@@ -29,37 +29,96 @@
     <meta name="keywords" content="about color by number, educational coloring pages, kids activities, teaching resources">
     <title>About Us - color-by-number.site - Free Educational Resources</title>
     <link rel="canonical" href="https://color-by-number.site/pages/about.html">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafafa;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .nav-brand .brand-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: #2563eb;
+        }
+
+        .detail-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <nav class="nav">
             <div class="container">
                 <div class="nav-brand">
-                    <div class="brand-title"><a href="/" style="color: white; text-decoration: none;">color-by-number.site</a></div>
+                    <div class="brand-title">🎨 color-by-number.site</div>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="/">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#">Categories</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="../color-by-number/animals/index.html">Animals</a></li>
-                            <li><a href="../color-by-number/holidays/index.html">Holidays</a></li>
-                            <li><a href="../categories/holidays.html">Seasons</a></li>
-                            <li><a href="../categories/characters.html">Characters</a></li>
-                            <li><a href="../categories/educational.html">Letters</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="../blog/">Blog</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#categories">Categories</a></li>
+                    <li><a href="../blog/index.html">Blog</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </div>
         </nav>
     </header>
@@ -152,6 +211,5 @@
         </div>
     </footer>
 
-    <script src="../assets/js/main.js"></script>
-</body>
+  </body>
 </html>
