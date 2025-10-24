@@ -13,7 +13,13 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(node:*)",
-      "Read(//g/ai编程/100个网站/05 填色卡网站/blog配图/01/**)"
+      "Read(//g/ai编程/100个网站/05 填色卡网站/blog配图/01/**)",
+      "Bash(where:*)",
+      "Bash(pip install:*)",
+      "Bash(python -m pip:*)",
+      "Bash(dir:*)",
+      "Read(//g/ai编程/100个网站/05 填色卡网站/PDF图片输出/**)",
+      "Read(//g/ai编程/100个网站/05 填色卡网站/blog配图/**)"
     ],
     "deny": [],
     "ask": []

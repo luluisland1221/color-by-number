@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebP图片转换器 - 本地工具</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .upload-area {
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+        .upload-area:hover {
+            border-color: #007bff;
+        }
+        .upload-area.dragover {
+            border-color: #007bff;
+            background-color: #f0f8ff;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .quality-control {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .quality-control label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .quality-slider {
+            width: 100%;
+            max-width: 300px;
+        }
+        .quality-value {
+            display: inline-block;
+            margin-left: 10px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .results {
+            margin-top: 30px;
+        }
+        .result-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #007bff;
+        }
+        .download-btn {
+            background: #007bff;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px;
+        }
+        .download-btn:hover {
+            background: #0056b3;
+        }
+        .size-info {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .progress {
+            width: 100%;
+            height: 20px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ WebP图片转换器</h1>
+        <p style="text-align: center; color: #666; margin-bottom: 30px;">
+            将JPG/PNG图片转换为WebP格式，减少文件大小，提升加载速度
+        </p>
+
+        <div class="upload-area" id="uploadArea">
+            <p style="font-size: 18px; margin-bottom: 10px;">📁 选择或拖拽图片到这里</p>
+            <p style="color: #666; font-size: 14px;">支持 JPG, PNG, BMP, TIFF 格式</p>
+            <input type="file" id="fileInput" multiple accept="image/*">
+        </div>
+
+        <div class="quality-control">
+            <label for="qualitySlider">
+                图片质量: <span class="quality-value" id="qualityValue">85%</span>
+            </label>
+            <input type="range" id="qualitySlider" class="quality-slider" min="10" max="100" value="85">
+        </div>
+
+        <div class="results" id="results"></div>
+    </div>
+
+    <script>
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const qualitySlider = document.getElementById('qualitySlider');
+        const qualityValue = document.getElementById('qualityValue');
+        const results = document.getElementById('results');
+
+        // 更新质量显示
+        qualitySlider.addEventListener('input', () => {
+            qualityValue.textContent = qualitySlider.value + '%';
+        });
+
+        // 点击上传区域
+        uploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        // 拖拽上传
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            handleFiles(e.dataTransfer.files);
+        });
+
+        // 文件选择
+        fileInput.addEventListener('change', (e) => {
+            handleFiles(e.target.files);
+        });
+
+        async function handleFiles(files) {
+            results.innerHTML = '<h3>🔄 转换中...</h3>';
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                if (file.type.startsWith('image/')) {
+                    await convertImage(file, i, files.length);
+                }
+            }
+        }
+
+        async function convertImage(file, index, total) {
+            return new Promise((resolve) => {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                const img = new Image();
+
+                img.onload = function() {
+                    // 设置画布尺寸
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+
+                    // 绘制图片
+                    ctx.drawImage(img, 0, 0);
+
+                    // 转换为WebP
+                    canvas.toBlob(function(blob) {
+                        const webpUrl = URL.createObjectURL(blob);
+                        const originalSize = file.size;
+                        const webpSize = blob.size;
+                        const reduction = ((1 - webpSize / originalSize) * 100).toFixed(1);
+
+                        const resultItem = document.createElement('div');
+                        resultItem.className = 'result-item';
+                        resultItem.innerHTML = `
+                            <h4>📊 ${file.name}</h4>
+                            <div class="size-info">
+                                原文件: ${formatFileSize(originalSize)} |
+                                WebP: ${formatFileSize(webpSize)} |
+                                减少: ${reduction}%
+                            </div>
+                            <a href="${webpUrl}" download="${file.name.replace(/\.[^/.]+$/, '.webp')}" class="download-btn">
+                                ⬇️ 下载 WebP
+                            </a>
+                        `;
+
+                        results.appendChild(resultItem);
+                        resolve();
+                    }, 'image/webp', qualitySlider.value / 100);
+                };
+
+                img.src = URL.createObjectURL(file);
+            });
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+    </script>
+</body>
+</html>
