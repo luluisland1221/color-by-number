@@ -20,6 +20,18 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://color-by-number.site/pages/privacy-policy.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://color-by-number.site/pages/terms-of-service.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://color-by-number.site/pdf-detail.html</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>weekly</changefreq>
