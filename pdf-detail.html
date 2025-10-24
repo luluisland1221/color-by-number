@@ -294,6 +294,99 @@
         .breadcrumb a:hover {
             text-decoration: underline;
         }
+
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #374151;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+                gap: 0;
+                z-index: 1000;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 0.5rem 0;
+            }
+
+            .nav-menu a {
+                color: #374151;
+                font-size: 1.1rem;
+                padding: 0.75rem;
+                display: block;
+                border-bottom: 1px solid #f3f4f6;
+                text-decoration: none;
+                transition: background-color 0.2s, color 0.2s;
+            }
+
+            .nav-menu a:hover {
+                color: #2563eb;
+                background-color: #f8fafc;
+            }
+
+            .nav-menu a:last-child {
+                border-bottom: none;
+            }
+
+            .pdf-content {
+                grid-template-columns: 1fr;
+            }
+
+            .pdf-emoji {
+                font-size: 5rem;
+            }
+
+            .related-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
     </style>
 </head>
 <body>
@@ -308,6 +401,11 @@
                     <li><a href="index.html#categories">Categories</a></li>
                     <li><a href="#about">About</a></li>
                 </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </nav>
     </header>
@@ -386,12 +484,12 @@
                 { id: 6, name: 'Butterfly', emoji: '🦋', file: 'butterfly.pdf', description: 'Beautiful butterfly with intricate wing patterns designed for advanced colorers who enjoy detailed, meditative work. This Monarch butterfly coloring page showcases the delicate beauty of lepidopterans while teaching about symmetry, geometric patterns, and insect anatomy through artistic exploration. The complex wing designs provide hours of creative engagement and artistic expression, featuring realistic vein patterns and scale textures that mirror actual butterfly wing structures. Educational benefits include understanding metamorphosis, pollination importance, migration patterns, and biodiversity conservation. Perfect for ages 8-14, combining advanced coloring skills with entomology education and mindfulness practice through detailed artistic creation.' }
             ],
             holidays: [
-                { id: 201, name: 'Christmas Tree', emoji: '🎄', file: 'Christmas tree（Christmas�?pdf', description: 'Festive Christmas tree coloring page featuring beautifully decorated evergreen with twinkling ornaments, glowing lights, and a shining star topper that captures the magic of holiday traditions. Perfect for Christmas celebrations and winter art projects, this detailed illustration includes traditional decorations like candy canes, glass balls, and tinsel that teach children about cultural symbols and seasonal celebrations. The intricate ornament details provide excellent practice for fine motor skills while creating a treasured keepsake for family holiday displays. Educational opportunities include discussions about Christmas traditions, evergreen symbolism, and the history of decorated trees across different cultures and celebrations worldwide.' },
+                { id: 201, name: 'Christmas Tree', emoji: '🎄', file: 'Christmas tree（Christmas�?pdf', description: 'Festive Christmas tree coloring page featuring beautifully decorated evergreen with twinkling ornaments, glowing lights, and a shining star topper that captures the magic of holiday traditions. Perfect for Christmas celebrations and winter art projects, this detailed illustration includes traditional decorations like candy canes, glass balls, and tinsel that teach children about cultural symbols and seasonal celebrations. The intricate ornament details provide excellent practice for fine motor skills while creating a treasured keepsake for family holiday displays. Educational opportunities include discussions about Christmas traditions, evergreen symbolism, and the history of decorated trees across different cultures and celebrations worldwide.' },
                 { id: 202, name: 'Santa Claus', emoji: '🎅', file: 'Santa Claus.pdf', description: 'Jolly Santa Claus delivering gifts captures the beloved spirit of Christmas generosity and childhood wonder. Perfect for Christmas morning activities and holiday craft projects, this detailed illustration features the iconic red suit, white beard, and gift-filled sack that represent centuries of Christmas tradition and folklore. The cheerful expression and traditional details provide opportunities to discuss cultural celebrations, gift-giving traditions, and the historical evolution of Santa Claus legends across different countries. Creates magical memories while teaching children about generosity, kindness, and the joy of giving through artistic expression and holiday-themed creative activities.' },
-                { id: 203, name: 'Halloween Pumpkin', emoji: '🎃', file: 'jack-o\'-lantern（Halloween�?pdf', description: 'Spooky jack-o-lantern coloring page perfect for Halloween fun and teaching children about autumn traditions and harvest celebrations. This classic Halloween symbol features a carved pumpkin with glowing face that represents the intersection of Celtic traditions and American folk customs. The detailed carving patterns provide excellent practice for fine motor skills while creating festive decorations for Halloween parties and classroom displays. Educational opportunities include discussions about pumpkin biology, harvest seasons, cultural traditions, and the fascinating history of jack-o-lanterns from Celtic folklore to modern celebrations, making it perfect for October learning activities and creative seasonal projects.' }
+                { id: 203, name: 'Halloween Pumpkin', emoji: '🎃', file: 'jack-o\'-lantern（Halloween�?pdf', description: 'Spooky jack-o-lantern coloring page perfect for Halloween fun and teaching children about autumn traditions and harvest celebrations. This classic Halloween symbol features a carved pumpkin with glowing face that represents the intersection of Celtic traditions and American folk customs. The detailed carving patterns provide excellent practice for fine motor skills while creating festive decorations for Halloween parties and classroom displays. Educational opportunities include discussions about pumpkin biology, harvest seasons, cultural traditions, and the fascinating history of jack-o-lanterns from Celtic folklore to modern celebrations, making it perfect for October learning activities and creative seasonal projects.' }
             ],
             vehicles: [
-                { id: 301, name: 'Race Car', emoji: '🏎�?, file: 'race-car.pdf', description: 'Fast and furious race car coloring page designed for speed enthusiasts and young racing fans who dream of high-octane adventures. This dynamic sports car illustration features aerodynamic styling, racing stripes, and performance details that capture the excitement of motorsports and automotive engineering. Perfect for teaching children about different types of vehicles while encouraging creativity and attention to mechanical details. The realistic proportions and racing elements provide opportunities to discuss speed, aerodynamics, and automotive technology while developing artistic skills through detailed coloring that celebrates the thrill of racing and transportation innovation.' },
+                { id: 301, name: 'Race Car', emoji: '🏎�?, file: 'race-car.pdf', description: 'Fast and furious race car coloring page designed for speed enthusiasts and young racing fans who dream of high-octane adventures. This dynamic sports car illustration features aerodynamic styling, racing stripes, and performance details that capture the excitement of motorsports and automotive engineering. Perfect for teaching children about different types of vehicles while encouraging creativity and attention to mechanical details. The realistic proportions and racing elements provide opportunities to discuss speed, aerodynamics, and automotive technology while developing artistic skills through detailed coloring that celebrates the thrill of racing and transportation innovation.' },
                 { id: 302, name: 'Airplane', emoji: '✈️', file: 'airplane.pdf', description: 'High-flying airplane perfect for aviation lovers and travel-themed activities that spark dreams of adventure and exploration. This detailed commercial aircraft coloring page includes realistic proportions, wing structures, and aviation elements that teach children about flight principles and transportation technology. The clear number guides make it accessible for all skill levels while creating an impressive aviation-themed artwork perfect for bedroom decorations or travel journals. Educational benefits include understanding aerodynamics, different types of aircraft, and the importance of aviation in connecting people and cultures across vast distances through creative, engaging artistic activities.' },
                 { id: 303, name: 'Train', emoji: '🚂', file: 'train.pdf', description: 'Classic steam train with detailed carriages to color - perfect for transportation enthusiasts and history lessons about industrial revolution marvels. This nostalgic locomotive design features authentic details like smokestacks, driving wheels, and passenger cars that teach children about historical transportation evolution and engineering achievements. The intricate mechanical details provide excellent practice for fine motor skills and patience while creating impressive artwork that celebrates the golden age of rail travel. Educational opportunities include understanding steam power, transportation history, and the cultural impact of railways on society through detailed, historically accurate coloring activities.' }
             ],
@@ -410,10 +508,10 @@
             ],
             educational: [
                 { id: 701, name: 'Alphabet A-Z', emoji: '🔤', file: 'alphabet.pdf', description: 'Complete alphabet coloring workbook featuring all twenty-six letters designed to teach letter recognition, phonics, and early literacy skills through creative artistic expression. Perfect for preschool and kindergarten students, this comprehensive educational resource combines letter formation practice with vocabulary building and artistic development. Each letter page includes corresponding objects and words that help children associate sounds with symbols while developing fine motor skills through coloring activities. The systematic approach builds confidence while challenging young learners to master essential early reading skills through enjoyable, hands-on activities that make learning letters fun, memorable, and developmentally appropriate for emerging readers.' },
-                { id: 702, name: 'Shapes', emoji: '�?, file: 'shapes.pdf', description: 'Basic geometric shapes coloring pages designed for early learners to master fundamental mathematical concepts through creative exploration and artistic expression. This educational resource includes circles, squares, triangles, rectangles, and more complex polygons that teach shape recognition, spatial relationships, and mathematical vocabulary. Perfect for preschool and early elementary students, these pages combine mathematical learning with artistic development using clear outlines and engaging illustrations. The progressive difficulty builds confidence while challenging young learners to understand how shapes combine to create complex objects and structures, making abstract mathematical concepts concrete through hands-on coloring activities that support cognitive development and mathematical thinking.' }
+                { id: 702, name: 'Shapes', emoji: '�?, file: 'shapes.pdf', description: 'Basic geometric shapes coloring pages designed for early learners to master fundamental mathematical concepts through creative exploration and artistic expression. This educational resource includes circles, squares, triangles, rectangles, and more complex polygons that teach shape recognition, spatial relationships, and mathematical vocabulary. Perfect for preschool and early elementary students, these pages combine mathematical learning with artistic development using clear outlines and engaging illustrations. The progressive difficulty builds confidence while challenging young learners to understand how shapes combine to create complex objects and structures, making abstract mathematical concepts concrete through hands-on coloring activities that support cognitive development and mathematical thinking.' }
             ],
             sports: [
-                { id: 801, name: 'Soccer Ball', emoji: '�?, file: 'soccer-ball.pdf', description: 'Classic soccer ball pattern perfect for sports fans and young athletes who love the beautiful game of football. This authentic spherical design features traditional black and white pentagon patterns that teach children about geometric shapes, sports equipment design, and the global popularity of soccer. The detailed panel structure provides excellent practice for fine motor skills while creating artwork that celebrates physical activity and team sports. Educational opportunities include understanding sports equipment manufacturing, the physics of ball design, and the cultural significance of soccer worldwide. Perfect for sports-themed parties, physical education lessons, or encouraging active lifestyles through creative artistic expression.' },
+                { id: 801, name: 'Soccer Ball', emoji: '�?, file: 'soccer-ball.pdf', description: 'Classic soccer ball pattern perfect for sports fans and young athletes who love the beautiful game of football. This authentic spherical design features traditional black and white pentagon patterns that teach children about geometric shapes, sports equipment design, and the global popularity of soccer. The detailed panel structure provides excellent practice for fine motor skills while creating artwork that celebrates physical activity and team sports. Educational opportunities include understanding sports equipment manufacturing, the physics of ball design, and the cultural significance of soccer worldwide. Perfect for sports-themed parties, physical education lessons, or encouraging active lifestyles through creative artistic expression.' },
                 { id: 802, name: 'Basketball', emoji: '🏀', file: 'basketball.pdf', description: 'Realistic basketball coloring page for sports enthusiasts that captures the dynamic texture and distinctive orange coloration of America\'s favorite indoor sport. This detailed sports equipment illustration features authentic panel lines, textured surface details, and proper proportions that teach children about sports equipment design and the physics of ball sports. Perfect for March Madness activities, basketball practice motivation, or sports-themed celebrations that combine athletic enthusiasm with artistic creativity. The familiar sports equipment provides opportunities to discuss teamwork, hand-eye coordination, and the importance of physical activity while developing artistic skills through detailed coloring that celebrates competitive sports and healthy lifestyles.' }
             ]
         };
@@ -481,6 +579,41 @@
 
         // Load PDF detail on page load
         loadPDFDetail();
+
+        // Hamburger menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+
+            // Close mobile menu on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        }
     </script>
 </body>
 </html>
