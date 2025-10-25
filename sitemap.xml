@@ -537,25 +537,25 @@
   <!-- Individual PDF Pages -->
   <!-- Birds Category PDFs -->
   <url>
-    <loc>https://color-by-number.site/pdfs/birds/parrot.pdf</loc>
+    <loc>https://color-by-number.site/pdf/parrot.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://color-by-number.site/pdfs/birds/owl.pdf</loc>
+    <loc>https://color-by-number.site/pdf/owl.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://color-by-number.site/pdfs/birds/penguin.pdf</loc>
+    <loc>https://color-by-number.site/pdf/penguin.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://color-by-number.site/pdfs/birds/duck.pdf</loc>
+    <loc>https://color-by-number.site/pdf/duck.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -563,25 +563,25 @@
 
   <!-- Land Animals Category PDFs -->
   <url>
-    <loc>https://color-by-number.site/pdfs/land-animals/cow.pdf</loc>
+    <loc>https://color-by-number.site/pdf/cow.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://color-by-number.site/pdfs/land-animals/bear.pdf</loc>
+    <loc>https://color-by-number.site/pdf/bear.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://color-by-number.site/pdfs/land-animals/dog.pdf</loc>
+    <loc>https://color-by-number.site/pdf/dog.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://color-by-number.site/pdfs/land-animals/cat.pdf</loc>
+    <loc>https://color-by-number.site/pdf/cat.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -589,19 +589,19 @@
 
   <!-- Ocean Animals Category PDFs -->
   <url>
-    <loc>https://color-by-number.site/pdfs/ocean-animals/fish.pdf</loc>
+    <loc>https://color-by-number.site/pdf/fish.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://color-by-number.site/pdfs/ocean-animals/whale.pdf</loc>
+    <loc>https://color-by-number.site/pdf/whale.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://color-by-number.site/pdfs/ocean-animals/dolphin.pdf</loc>
+    <loc>https://color-by-number.site/pdf/dolphin.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -609,13 +609,13 @@
 
   <!-- Insects Category PDFs -->
   <url>
-    <loc>https://color-by-number.site/pdfs/insects/butterfly.pdf</loc>
+    <loc>https://color-by-number.site/pdf/butterfly.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://color-by-number.site/pdfs/insects/bee.pdf</loc>
+    <loc>https://color-by-number.site/pdf/bee.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -623,13 +623,13 @@
 
   <!-- Holidays Category PDFs -->
   <url>
-    <loc>https://color-by-number.site/pdfs/holidays/christmas-tree.pdf</loc>
+    <loc>https://color-by-number.site/pdf/christmas-tree.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://color-by-number.site/pdfs/holidays/halloween-pumpkin.pdf</loc>
+    <loc>https://color-by-number.site/pdf/halloween-pumpkin.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -637,19 +637,19 @@
 
   <!-- Vehicles Category PDFs -->
   <url>
-    <loc>https://color-by-number.site/pdfs/vehicles/car.pdf</loc>
+    <loc>https://color-by-number.site/pdf/vehicles/car.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://color-by-number.site/pdfs/vehicles/train.pdf</loc>
+    <loc>https://color-by-number.site/pdf/vehicles/train.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://color-by-number.site/pdfs/vehicles/airplane.pdf</loc>
+    <loc>https://color-by-number.site/pdf/vehicles/airplane.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -657,19 +657,19 @@
 
   <!-- Food Category PDFs -->
   <url>
-    <loc>https://color-by-number.site/pdfs/food/cake.pdf</loc>
+    <loc>https://color-by-number.site/pdf/food/cake.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://color-by-number.site/pdfs/food/ice-cream.pdf</loc>
+    <loc>https://color-by-number.site/pdf/food/ice-cream.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://color-by-number.site/pdfs/food/apple.pdf</loc>
+    <loc>https://color-by-number.site/pdf/food/apple.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -677,7 +677,7 @@
 
   <!-- Characters Category PDFs -->
   <url>
-    <loc>https://color-by-number.site/pdfs/characters/mickey-mouse.pdf</loc>
+    <loc>https://color-by-number.site/pdf/characters/mickey-mouse.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -685,13 +685,13 @@
 
   <!-- Nature Category PDFs -->
   <url>
-    <loc>https://color-by-number.site/pdfs/nature/flower.pdf</loc>
+    <loc>https://color-by-number.site/pdf/nature/flower.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://color-by-number.site/pdfs/nature/tree.pdf</loc>
+    <loc>https://color-by-number.site/pdf/nature/tree.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -699,7 +699,7 @@
 
   <!-- Educational Category PDFs -->
   <url>
-    <loc>https://color-by-number.site/pdfs/educational/geometry.pdf</loc>
+    <loc>https://color-by-number.site/pdf/educational/geometry.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -707,7 +707,7 @@
 
   <!-- Sports Category PDFs -->
   <url>
-    <loc>https://color-by-number.site/pdfs/sports/ball.pdf</loc>
+    <loc>https://color-by-number.site/pdf/sports/ball.pdf</loc>
     <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
